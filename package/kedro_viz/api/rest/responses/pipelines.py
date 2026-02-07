@@ -3,6 +3,7 @@ and utility functions for the `/main` and `/pipelines/* REST endpoints"""
 
 import json
 import logging
+from pathlib import Path
 from typing import Any, Dict, List, Optional, Union
 
 from fastapi.responses import JSONResponse
@@ -266,3 +267,56 @@ def get_kedro_project_json_data(pipeline_name: Optional[str] = None):
         logger.error("Failed to parse JSON data. Error: %s", str(exc))
 
     return json_data
+
+
+def get_conf_pipeline_response() -> Union[GraphAPIResponse, JSONResponse]:
+    """API response for conf-driven graph from conf/base YAML files."""
+    try:
+        from kedro_viz.services.conf_graph_service import ConfGraphService
+        
+        # Try to determine project path from data_access_manager
+        project_path = None
+        try:
+            # Attempt to get project path from session context if available
+            from kedro.framework.project import pipelines
+            from kedro.framework.startup import bootstrap_project
+            from pathlib import Path
+            import os
+            
+            # Get current working directory as project path
+            project_path = Path.cwd()
+            
+        except Exception:
+            # Fallback: use current working directory
+            project_path = Path.cwd()
+        
+        logger.info(f"Loading conf-driven graph from project: {project_path}")
+        
+        # Build graph from conf files
+        service = ConfGraphService(project_path)
+        graph_data = service.get_graph()
+        
+        # Convert to API response format
+        # Note: Conf-driven mode returns minimal structure
+        return GraphAPIResponse(
+            nodes=graph_data.get("nodes", []),
+            edges=graph_data.get("edges", []),
+            layers=[],  # No layers in conf mode
+            tags=[],  # No tags in conf mode
+            pipelines=[{"id": "conf", "name": "Conf-driven"}],
+            modular_pipelines={"__root__": {
+                "id": "__root__",
+                "name": "Root",
+                "inputs": [],
+                "outputs": [],
+                "children": [],
+            }},
+            selected_pipeline="conf",
+        )
+    
+    except Exception as exc:
+        logger.exception(f"Failed to load conf-driven graph: {exc}")
+        return JSONResponse(
+            status_code=500,
+            content={"message": f"Failed to load conf-driven graph: {str(exc)}"}
+        )

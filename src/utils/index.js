@@ -20,9 +20,26 @@ export const arrayToObject = (array, callback) => {
  * @param {String=} id Endpoint identifier e.g. pipeline ID
  */
 export const getUrl = (type, id) => {
+  // Check for source parameter in URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const source = urlParams.get('source');
+
+  console.log(
+    '[DEBUG] getUrl called - type:',
+    type,
+    'id:',
+    id,
+    'source:',
+    source
+  );
+
   switch (type) {
     case 'main':
-      return [pathRoot, 'main'].join('/');
+      const mainPath = [pathRoot, 'main'].join('/');
+      // Append source parameter if present
+      const finalUrl = source ? `${mainPath}?source=${source}` : mainPath;
+      console.log('[DEBUG] getUrl returning:', finalUrl);
+      return finalUrl;
     case 'pipeline':
       if (!id) {
         throw new Error('No pipeline ID provided');

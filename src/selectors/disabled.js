@@ -177,7 +177,7 @@ export const getNodeDisabled = createSelector(
 
       const isDisabledViaModularPipeline = nodesDisabledViaModularPipeline[id];
 
-      return [
+      const reasons = [
         nodeDisabledNode[id],
         nodeDisabledTag[id],
         nodeDisabledPipeline[id],
@@ -186,7 +186,36 @@ export const getNodeDisabled = createSelector(
         isDisabledViaSidebar,
         isDisabledViaModularPipeline,
         isDisabledViaSlicedPipeline,
-      ].some(Boolean);
+      ];
+
+      const isDisabled = reasons.some(Boolean);
+
+      // Debug logging for first node only
+      if (id === nodeIDs[0]) {
+        console.log('[DEBUG getNodeDisabled] First node:', id);
+        console.log('  nodeDisabledNode:', nodeDisabledNode[id]);
+        console.log('  nodeDisabledTag:', nodeDisabledTag[id]);
+        console.log('  nodeDisabledPipeline:', nodeDisabledPipeline[id]);
+        console.log('  disabledModularPipeline:', disabledModularPipeline[id]);
+        console.log(
+          '  typeDisabled:',
+          typeDisabled[nodeType[id]],
+          'type:',
+          nodeType[id]
+        );
+        console.log('  isDisabledViaSidebar:', isDisabledViaSidebar);
+        console.log(
+          '  isDisabledViaModularPipeline:',
+          isDisabledViaModularPipeline
+        );
+        console.log(
+          '  isDisabledViaSlicedPipeline:',
+          isDisabledViaSlicedPipeline
+        );
+        console.log('  => DISABLED:', isDisabled);
+      }
+
+      return isDisabled;
     })
 );
 

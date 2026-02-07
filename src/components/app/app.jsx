@@ -41,8 +41,14 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    console.log('[DEBUG] App componentDidMount - data:', this.props.data);
     if (this.props.data === 'json') {
+      console.log('[DEBUG] Dispatching loadInitialPipelineData');
       this.store.dispatch(loadInitialPipelineData());
+    } else {
+      console.log(
+        '[DEBUG] Skipping loadInitialPipelineData - data is not "json"'
+      );
     }
 
     // If runData is not provided, load it from the API

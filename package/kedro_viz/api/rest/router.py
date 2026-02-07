@@ -1,8 +1,9 @@
 """`kedro_viz.api.rest.router` defines REST routes and handling logic."""
 
 import logging
+from typing import Optional
 
-from fastapi import APIRouter
+from fastapi import APIRouter, Query
 from fastapi.responses import JSONResponse
 
 from kedro_viz.api.rest.requests import DeployerConfiguration
@@ -18,6 +19,7 @@ from kedro_viz.api.rest.responses.nodes import (
 from kedro_viz.api.rest.responses.pipelines import (
     GraphAPIResponse,
     get_pipeline_response,
+    get_conf_pipeline_response,
 )
 from kedro_viz.api.rest.responses.run_events import (
     RunStatusAPIResponse,
@@ -37,7 +39,16 @@ router = APIRouter(
 
 
 @router.get("/main", response_model=GraphAPIResponse)
-async def main():
+async def main(source: Optional[str] = Query(None, description="Graph source: 'conf' for conf-driven mode, default for Kedro pipeline mode")):
+    """Get the main graph data.
+    
+    Args:
+        source: Optional query parameter to specify graph source.
+                Use 'conf' to load graph from conf/base YAML files.
+                Default behavior uses Kedro pipeline graph.
+    """
+    if source == "conf":
+        return get_conf_pipeline_response()
     return get_pipeline_response()
 
 

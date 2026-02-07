@@ -1,0 +1,3 @@
+# Kedro DataCatalog (empty - we use conf-driven mode instead)
+# Our custom catalog files are: catalog_source_*.yml and catalog_canonical_*.yml
+# These are NOT Kedro datasets, they define field-level lineage metadata

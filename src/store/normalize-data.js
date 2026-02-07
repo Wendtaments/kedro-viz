@@ -295,6 +295,13 @@ const normalizeData = (data, expandAllPipelines) => {
     state.dataSource = data.source;
   }
 
+  console.log(
+    '[DEBUG normalizeData] data.source:',
+    data.source,
+    'state.dataSource:',
+    state.dataSource
+  );
+
   if (!validateInput(data)) {
     return state;
   }
@@ -327,8 +334,25 @@ const normalizeData = (data, expandAllPipelines) => {
       });
     } else {
       if (data.modular_pipelines && data.modular_pipelines['__root__']) {
-        for (const child of data.modular_pipelines['__root__'].children || []) {
-          state.modularPipeline.visible[child.id] = true;
+        const rootChildren = data.modular_pipelines['__root__'].children || [];
+
+        // If there are no modular pipelines (only __root__ with no children),
+        // make all nodes visible by default
+        if (
+          rootChildren.length === 0 &&
+          state.modularPipeline.ids.length === 1
+        ) {
+          console.log(
+            '[DEBUG] No modular pipelines - marking all nodes as visible'
+          );
+          state.node.ids.forEach((nodeId) => {
+            state.modularPipeline.visible[nodeId] = true;
+          });
+        } else {
+          // Normal case: mark only root children as visible
+          for (const child of rootChildren) {
+            state.modularPipeline.visible[child.id] = true;
+          }
         }
       }
     }

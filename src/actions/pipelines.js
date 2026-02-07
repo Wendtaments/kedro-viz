@@ -90,8 +90,13 @@ export function loadInitialPipelineData() {
   return async function (dispatch, getState) {
     // Get a copy of the full state from the store
     const state = getState();
+    console.log(
+      '[DEBUG] loadInitialPipelineData - dataSource:',
+      state.dataSource
+    );
     // If data is passed synchronously then this process isn't necessary
     if (state.dataSource !== 'json') {
+      console.log('[DEBUG] Skipping async load - dataSource is not json');
       return;
     }
     dispatch(toggleLoading(true));
@@ -99,12 +104,36 @@ export function loadInitialPipelineData() {
     // in order to obtain the list of pipelines, which is required for determining
     // whether the active pipeline (from localStorage) exists in the data.
     const url = getUrl('main');
+    console.log('[DEBUG] Loading data from URL:', url);
     // obtain the status of expandAllPipelines to decide whether it needs to overwrite the
     // list of visible nodes
     const expandAllPipelines = state.expandAllPipelines;
     const urlParams = parseUrlParameters();
-    let newState = await loadJsonData(url).then((data) =>
-      preparePipelineState(data, true, expandAllPipelines, urlParams)
+    let newState = await loadJsonData(url).then((data) => {
+      console.log(
+        '[DEBUG] Data loaded, node count:',
+        data.nodes ? data.nodes.length : 0
+      );
+      console.log('[DEBUG] Sample node:', data.nodes ? data.nodes[0] : null);
+      console.log('[DEBUG] Pipelines:', data.pipelines);
+      console.log('[DEBUG] Selected pipeline:', data.selected_pipeline);
+      return preparePipelineState(data, true, expandAllPipelines, urlParams);
+    });
+    console.log(
+      '[DEBUG] After preparePipelineState - node.ids.length:',
+      newState.node.ids.length
+    );
+    console.log(
+      '[DEBUG] After preparePipelineState - pipeline.active:',
+      newState.pipeline.active
+    );
+    console.log(
+      '[DEBUG] After preparePipelineState - pipeline.main:',
+      newState.pipeline.main
+    );
+    console.log(
+      '[DEBUG] After preparePipelineState - pipeline.ids:',
+      newState.pipeline.ids
     );
     // If the active pipeline isn't 'main' then request data from new URL
     if (requiresSecondRequest(newState.pipeline)) {
