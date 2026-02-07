@@ -78,6 +78,24 @@ Why can I not find the new folder structure (project)? I was thinking of
 something like an empty version of demo-project
 ```
 
-**Action Taken:** Understanding user wants lineage-project inside kedro-viz directory, similar to demo-project structure. Checking demo-project structure first.
+**Action Taken:** Created lineage-project inside kedro-viz directory at `/Users/wendt/Code/Repos/Mapping/kedro-viz/lineage-project/` - structured like demo-project.
+
+---
+
+### Prompt 8: Set Git Remote
+```
+set origin_nico to point to where this repo was cloned from
+```
+
+**Action Taken:** Setting git remote 'origin_nico' to https://github.com/Wendtaments/kedro-viz.git
+
+---
+
+### Prompt 9: Check Push Failure
+```
+what failed to push?
+```
+
+**Action Taken:** Checking git push error details.
 
 ---
