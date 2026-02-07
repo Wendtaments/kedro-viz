@@ -1,0 +1,26 @@
+version: 1
+
+mappings:
+  - id: map.pqd.amount_instdAmt__to__canonical.OriginalAmount
+    from: source.creditTransfer.instructedAmount
+    to: canonical.transaction.OriginalAmount
+
+    transform:
+      nodeType: TransformationNormalize
+      domain: transactions
+      id: xform.norm.amount.instdAmt_to_OriginalAmount
+      ruleId: norm.amount.v1
+      logicRef: sql/normalise_amount.sql
+
+    edges:
+      - type: DERIVES_FROM
+        from: source.creditTransfer.instructedAmount
+        to: xform.norm.amount.instdAmt_to_OriginalAmount
+      - type: DERIVES_FROM
+        from: xform.norm.amount.instdAmt_to_OriginalAmount
+        to: canonical.transaction.OriginalAmount
+
+    metadata:
+      lifecycle: Booking
+      confidence: final
+      owner: payments
