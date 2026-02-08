@@ -1,0 +1,38 @@
+version: 1
+nodeTags:
+- match: ^source\.card\.authorisation\.
+  tags:
+    concept: card
+    eventType: authorisation
+    product: debit_card
+- match: ^source\.creditTransfer\.
+  tags:
+    concept: international
+    eventType: booking
+    rail: pacs.008
+    product: credit_transfer
+- match: ^canonical\.transaction\.
+  tags:
+    layer: canonical
+    domain: transaction
+- match: ^xform\.card\.
+  tags:
+    concept: card
+    eventType: authorisation
+- match: ^xform\.pqd\.
+  tags:
+    concept: international
+    eventType: booking
+    rail: pacs.008
+- match: (?:^source\.card\.authorisation\.amount\.|^source\.creditTransfer\.instructedAmount\.)
+  tags:
+    subdomain: amounts
+- match: (?:^source\.card\.authorisation\.merchant\.|^canonical\.transaction\.(?:MerchantName|MCC)$)
+  tags:
+    subdomain: merchant
+- match: (?:^source\.creditTransfer\.(?:debtor|creditor|debtorAccount|creditorAccount)\.|^canonical\.transaction\.(?:DebtorName|CreditorName|DebtorAccountIban|CreditorAccountIban)$)
+  tags:
+    subdomain: parties
+- match: (?:^source\.creditTransfer\.remittance\.|^canonical\.transaction\.RemittanceText$)
+  tags:
+    subdomain: remittance

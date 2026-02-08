@@ -1,0 +1,76 @@
+version: 1
+groupSets:
+- id: groups.source.card.authorisation
+  label: 'Source groupings: Card authorisation'
+  kind: source
+  namespacePrefixes:
+  - source.card.authorisation.
+  groups:
+  - id: group.source.card.authorisation
+    label: Card authorisation (all)
+    includes:
+    - group.source.card.authorisation.merchant
+    - group.source.card.authorisation.amount
+  - id: group.source.card.authorisation.merchant
+    label: 'Card auth: merchant'
+    members:
+    - source.card.authorisation.merchant.name
+    - source.card.authorisation.merchant.mcc
+  - id: group.source.card.authorisation.amount
+    label: 'Card auth: amount'
+    members:
+    - source.card.authorisation.amount.value
+    - source.card.authorisation.amount.currency
+- id: groups.source.pqd.creditTransfer
+  label: 'Source groupings: PQD credit transfer'
+  kind: source
+  namespacePrefixes:
+  - source.creditTransfer.
+  groups:
+  - id: group.source.creditTransfer
+    label: PQD credit transfer (all)
+    includes:
+    - group.source.creditTransfer.parties
+    - group.source.creditTransfer.amount
+  - id: group.source.creditTransfer.amount
+    label: 'PQD: amount'
+    members:
+    - source.creditTransfer.instructedAmount.value
+    - source.creditTransfer.instructedAmount.currency
+  - id: group.source.creditTransfer.parties
+    label: 'PQD: parties & accounts'
+    members:
+    - source.creditTransfer.debtor.name
+    - source.creditTransfer.debtorAccount.iban
+    - source.creditTransfer.creditor.name
+    - source.creditTransfer.creditorAccount.iban
+- id: groups.canonical.transaction
+  label: 'Canonical groupings: transaction'
+  kind: canonical
+  namespacePrefixes:
+  - canonical.transaction.
+  groups:
+  - id: group.canonical.transaction
+    label: Canonical transaction (all)
+    includes:
+    - group.canonical.transaction.amounts
+    - group.canonical.transaction.parties
+    - group.canonical.transaction.merchant
+  - id: group.canonical.transaction.amounts
+    label: 'Canonical: amounts'
+    members:
+    - canonical.transaction.OriginalAmount
+    - canonical.transaction.OriginalCurrency
+  - id: group.canonical.transaction.parties
+    label: 'Canonical: parties'
+    members:
+    - canonical.transaction.DebtorName
+    - canonical.transaction.CreditorName
+    - canonical.transaction.DebtorAccountIban
+    - canonical.transaction.CreditorAccountIban
+    - canonical.transaction.RemittanceText
+  - id: group.canonical.transaction.merchant
+    label: 'Canonical: merchant'
+    members:
+    - canonical.transaction.MerchantName
+    - canonical.transaction.MCC

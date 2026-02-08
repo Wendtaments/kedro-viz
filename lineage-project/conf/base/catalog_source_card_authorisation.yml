@@ -1,0 +1,53 @@
+version: 1
+namespace: source.card.authorisation
+fields:
+- id: source.card.authorisation.eventId
+  alias: Event ID
+  displayName: eventId
+  source: 165-debit-card-authorisation-events
+  path: eventId
+- id: source.card.authorisation.accountId
+  alias: Account ID
+  displayName: accountId
+  source: 165-debit-card-authorisation-events
+  path: accountId
+- id: source.card.authorisation.cardId
+  alias: Card ID
+  displayName: cardId
+  source: 165-debit-card-authorisation-events
+  path: cardId
+- id: source.card.authorisation.authDateTime
+  alias: Auth time
+  displayName: authDateTime
+  source: 165-debit-card-authorisation-events
+  path: authDateTime
+- id: source.card.authorisation.merchant.name
+  alias: Merchant name
+  displayName: merchant.name
+  source: 165-debit-card-authorisation-events
+  path: merchant_name
+- id: source.card.authorisation.merchant.mcc
+  alias: MCC
+  displayName: merchant.mcc
+  source: 165-debit-card-authorisation-events
+  path: merchant_mcc
+- id: source.card.authorisation.amount.value
+  alias: Auth amount
+  displayName: amount.value
+  source: 165-debit-card-authorisation-events
+  path: amount_value
+- id: source.card.authorisation.amount.currency
+  alias: Auth currency
+  displayName: amount.currency
+  source: 165-debit-card-authorisation-events
+  path: amount_currency
+- id: source.card.authorisation.countryCode
+  alias: Country
+  displayName: countryCode
+  source: 165-debit-card-authorisation-events
+  path: countryCode
+- id: source.card.authorisation.cvm
+  alias: CVM
+  displayName: cvm
+  source: 165-debit-card-authorisation-events
+  path: cvm

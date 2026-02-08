@@ -1,0 +1,114 @@
+version: 1
+mappings:
+- id: map.card.auth.amount_to_canonical.original_amount
+  from: source.card.authorisation.amount.value
+  to: canonical.transaction.OriginalAmount
+  transform:
+    id: xform.card.Normalize.amount.value_to_OriginalAmount
+    nodeType: Normalize
+    ruleId: norm.amount.v1
+    logicRef: sql/normalize_amount.sql
+    domain: amounts
+  metadata:
+    concept: card
+    eventType: authorisation
+    confidence: provisional
+- id: map.card.auth.currency_to_canonical.original_currency
+  from: source.card.authorisation.amount.currency
+  to: canonical.transaction.OriginalCurrency
+  metadata:
+    concept: card
+    eventType: authorisation
+    confidence: provisional
+- id: map.card.auth.merchant_to_canonical.merchant
+  from: source.card.authorisation.merchant.name
+  to: canonical.transaction.MerchantName
+  transform:
+    id: xform.card.Clean.merchant.name_to_MerchantName
+    nodeType: Clean
+    ruleId: clean.text.v1
+    logicRef: sql/clean_text.sql
+    domain: merchant
+  metadata:
+    concept: card
+    eventType: authorisation
+- id: map.card.auth.mcc_to_canonical.mcc
+  from: source.card.authorisation.merchant.mcc
+  to: canonical.transaction.MCC
+  transform:
+    id: xform.card.MapCode.merchant.mcc_to_MCC
+    nodeType: MapCode
+    ruleId: map.mcc.v1
+    logicRef: sql/map_mcc.sql
+    domain: merchant
+  metadata:
+    concept: card
+    eventType: authorisation
+- id: map.pqd.instdAmt_to_canonical.original_amount
+  from: source.creditTransfer.instructedAmount.value
+  to: canonical.transaction.OriginalAmount
+  transform:
+    id: xform.pqd.Normalize.instdAmt_to_OriginalAmount
+    nodeType: Normalize
+    ruleId: norm.amount.v1
+    logicRef: sql/normalize_amount.sql
+    domain: amounts
+  metadata:
+    concept: international
+    eventType: booking
+    rail: pacs.008
+    confidence: final
+- id: map.pqd.ccy_to_canonical.original_currency
+  from: source.creditTransfer.instructedAmount.currency
+  to: canonical.transaction.OriginalCurrency
+  metadata:
+    concept: international
+    eventType: booking
+    rail: pacs.008
+    confidence: final
+- id: map.pqd.parties_to_canonical.debtor_creditor
+  from: source.creditTransfer.debtor.name
+  to: canonical.transaction.DebtorName
+  transform:
+    id: xform.pqd.Passthrough.debtor.name_to_DebtorName
+    nodeType: Passthrough
+    domain: parties
+  metadata:
+    concept: international
+    eventType: booking
+    rail: pacs.008
+- id: map.pqd.creditor_to_canonical.creditor
+  from: source.creditTransfer.creditor.name
+  to: canonical.transaction.CreditorName
+  transform:
+    id: xform.pqd.Passthrough.creditor.name_to_CreditorName
+    nodeType: Passthrough
+    domain: parties
+  metadata:
+    concept: international
+    eventType: booking
+    rail: pacs.008
+- id: map.pqd.remittance_override
+  from: source.creditTransfer.remittance.unstructured
+  to: canonical.transaction.RemittanceText
+  transform:
+    id: xform.pqd.Override.rmtInf_ustrd_to_RemittanceText
+    nodeType: Override
+    ruleId: override.remittance.v1
+    logicRef: sql/override_remittance.sql
+    domain: remittance
+  edges:
+  - type: DERIVES_FROM
+    from: source.creditTransfer.remittance.unstructured
+    to: xform.pqd.Override.rmtInf_ustrd_to_RemittanceText
+  - type: OVERRIDES
+    from: xform.pqd.Override.rmtInf_ustrd_to_RemittanceText
+    to: canonical.transaction.RemittanceText
+    metadata:
+      replaces: canonical.transaction.RemittanceText
+      reason: pacs008 authoritative remittance
+  metadata:
+    concept: international
+    eventType: booking
+    rail: pacs.008
+    confidence: final
