@@ -8,6 +8,7 @@ import {
   toggleSingleModularPipelineExpanded,
   toggleModularPipelineActive,
 } from '../../actions/modular-pipelines';
+import { toggleGroupExpanded } from '../../actions/groups';
 import { changed } from '../../utils';
 import {
   loadNodeData,
@@ -491,10 +492,14 @@ export class FlowChart extends Component {
    */
   handleNodeClick = (event, node) => {
     const { type, id } = node;
-    const { onClickToExpandModularPipeline } = this.props;
+    const { onClickToExpandModularPipeline, onToggleGroupExpanded } =
+      this.props;
 
     if (type === 'modularPipeline') {
       onClickToExpandModularPipeline(id);
+    } else if (type === 'group') {
+      // Toggle group expansion for Group nodes
+      onToggleGroupExpanded(id);
     } else {
       this.handleSingleNodeClick(node);
 
@@ -1043,6 +1048,9 @@ export const mapStateToProps = (state, ownProps) => ({
 export const mapDispatchToProps = (dispatch, ownProps) => ({
   onClickToExpandModularPipeline: (modularPipelineId) => {
     dispatch(toggleSingleModularPipelineExpanded(modularPipelineId));
+  },
+  onToggleGroupExpanded: (groupId) => {
+    dispatch(toggleGroupExpanded(groupId));
   },
   onLoadNodeData: (nodeClicked) => {
     dispatch(loadNodeData(nodeClicked));

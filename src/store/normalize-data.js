@@ -48,6 +48,7 @@ export const createInitialPipelineState = () => ({
     runCommand: {},
     modularPipelines: {},
     extras: {},
+    viz: {},
   },
   nodeType: {
     ids: ['task', 'data', 'parameters', 'modularPipeline'],
@@ -163,6 +164,7 @@ const addNode = (state) => (node) => {
   state.node.runCommand[id] = node.runCommand;
   state.node.modularPipelines[id] = node.modular_pipelines || [];
   state.node.extras[id] = node.node_extras || {};
+  state.node.viz[id] = node.viz || null;
 };
 
 /**

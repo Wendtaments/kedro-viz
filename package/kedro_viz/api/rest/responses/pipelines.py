@@ -36,6 +36,7 @@ class BaseGraphNodeAPIResponse(BaseAPIResponse):
         modular_pipelines (Optional[List[str]]): A list of modular pipelines associated with the graph node.
                                                  This value will be None if the node is a ModularPipeline node.
         node_extras (Optional[NodeExtrasAPIResponse]): Extra visualization properties for this node including styles, stats, etc.
+        viz (Optional[Dict[str, Any]]): Visualization metadata for conf-driven graph nodes (nodeType, meta, etc).
     """
 
     id: str
@@ -47,6 +48,7 @@ class BaseGraphNodeAPIResponse(BaseAPIResponse):
     # If a node is a ModularPipeline node, this value will be None, hence Optional.
     modular_pipelines: Optional[List[str]] = None
     node_extras: Optional[NodeExtrasAPIResponse] = None
+    viz: Optional[Dict[str, Any]] = None
 
 
 class TaskNodeAPIResponse(BaseGraphNodeAPIResponse):

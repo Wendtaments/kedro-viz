@@ -13,6 +13,7 @@ import modularPipeline from './modular-pipelines';
 import visible from './visible';
 import slice from './slice';
 import bannerReducer from './banner';
+import groups from './groups';
 import {
   RESET_DATA,
   TOGGLE_SHOW_FEATURE_HINTS,
@@ -102,6 +103,7 @@ const combinedReducer = combineReducers({
   visible,
   runStatus,
   showBanner: bannerReducer,
+  groups,
   // These props don't have any actions associated with them
   display: createReducer(null),
   dataSource: createReducer(null),

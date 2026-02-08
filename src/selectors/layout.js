@@ -3,6 +3,7 @@ import { getVisibleNodes } from './nodes';
 import { getVisibleEdges } from './edges';
 import { getVisibleLayerIDs } from './disabled';
 import { getVisibleMetaSidebar } from './metadata';
+import { getGroupAwareVisibleNodes, getViewEdges } from './group-view';
 import {
   sidebarWidth,
   metaSidebarWidth,
@@ -46,20 +47,56 @@ export const getTriggerLargeGraphWarning = createSelector(
 /**
  * Select a subset of state that is watched by graph layout calculators
  * and used to prepare state.graph via async web worker actions
+ *
+ * This now incorporates group expand/collapse logic:
+ * - Uses group-aware node filtering when Group nodes exist
+ * - Uses aggregated view edges when groups are collapsed
+ * - Falls back to original behavior when no groups present
  */
 export const getGraphInput = createSelector(
   [
     getVisibleNodes,
     getVisibleEdges,
+    getGroupAwareVisibleNodes,
+    getViewEdges,
     getVisibleLayerIDs,
     getFlowChartOrientation,
     getView,
     getTriggerLargeGraphWarning,
+    (state) => state.node.viz || {},
   ],
-  (nodes, edges, layers, orientation, view, triggerLargeGraphWarning) => {
+  (
+    baseNodes,
+    baseEdges,
+    groupAwareNodes,
+    viewEdges,
+    layers,
+    orientation,
+    view,
+    triggerLargeGraphWarning,
+    nodeVizData
+  ) => {
     if (triggerLargeGraphWarning) {
       return null;
     }
+
+    // Check if there are any Group nodes in the normalized node data
+    const hasGroupNodes = Object.values(nodeVizData).some(
+      (viz) => viz?.nodeType === 'Group'
+    );
+
+    // If no Group nodes, use original behavior
+    if (!hasGroupNodes) {
+      return { nodes: baseNodes, edges: baseEdges, layers, orientation, view };
+    }
+
+    // Use group-aware nodes (filters based on expand/collapse state)
+    // Map group-aware nodes to match the format expected by getVisibleNodes
+    const nodeIds = new Set(groupAwareNodes.map((node) => node.id));
+    const nodes = baseNodes.filter((node) => nodeIds.has(node.id));
+
+    // Use view edges (aggregated when groups are collapsed)
+    const edges = viewEdges;
 
     return { nodes, edges, layers, orientation, view };
   }
