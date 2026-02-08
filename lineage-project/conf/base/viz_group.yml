@@ -25,25 +25,25 @@ groupSets:
   label: 'Source groupings: PQD credit transfer'
   kind: source
   namespacePrefixes:
-  - source.creditTransfer.
+  - source.pqd.creditTransfer.
   groups:
-  - id: group.source.creditTransfer
+  - id: group.source.pqd.creditTransfer
     label: PQD credit transfer (all)
     includes:
-    - group.source.creditTransfer.parties
-    - group.source.creditTransfer.amount
-  - id: group.source.creditTransfer.amount
+    - group.source.pqd.creditTransfer.parties
+    - group.source.pqd.creditTransfer.amount
+  - id: group.source.pqd.creditTransfer.amount
     label: 'PQD: amount'
     members:
-    - source.creditTransfer.instructedAmount.value
-    - source.creditTransfer.instructedAmount.currency
-  - id: group.source.creditTransfer.parties
+    - source.pqd.creditTransfer.instructedAmount.value
+    - source.pqd.creditTransfer.instructedAmount.currency
+  - id: group.source.pqd.creditTransfer.parties
     label: 'PQD: parties & accounts'
     members:
-    - source.creditTransfer.debtor.name
-    - source.creditTransfer.debtorAccount.iban
-    - source.creditTransfer.creditor.name
-    - source.creditTransfer.creditorAccount.iban
+    - source.pqd.creditTransfer.debtor.name
+    - source.pqd.creditTransfer.debtorAccount.iban
+    - source.pqd.creditTransfer.creditor.name
+    - source.pqd.creditTransfer.creditorAccount.iban
 - id: groups.canonical.transaction
   label: 'Canonical groupings: transaction'
   kind: canonical

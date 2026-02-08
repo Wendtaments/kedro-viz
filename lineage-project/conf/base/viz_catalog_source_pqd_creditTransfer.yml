@@ -1,70 +1,70 @@
 version: 1
-namespace: source.creditTransfer
+namespace: source.pqd.creditTransfer
 fields:
-- id: source.creditTransfer.messageId
+- id: source.pqd.creditTransfer.messageId
   alias: Message ID
   displayName: messageId
   source: pqd-credit-transfer-events
   avroPath: grpHdr_msgId
   iso20022:
     path: GrpHdr/MsgId
-- id: source.creditTransfer.creationDateTime
+- id: source.pqd.creditTransfer.creationDateTime
   alias: Creation time
   displayName: creationDateTime
   source: pqd-credit-transfer-events
   avroPath: grpHdr_creDtTm
   iso20022:
     path: GrpHdr/CreDtTm
-- id: source.creditTransfer.paymentId.endToEndId
+- id: source.pqd.creditTransfer.paymentId.endToEndId
   alias: End-to-end ID
   displayName: paymentId.endToEndId
   source: pqd-credit-transfer-events
   avroPath: cdtTrfTxInf_pmtId_endToEndId
   iso20022:
     path: CdtTrfTxInf/PmtId/EndToEndId
-- id: source.creditTransfer.instructedAmount.value
+- id: source.pqd.creditTransfer.instructedAmount.value
   alias: InstdAmt
   displayName: instructedAmount.value
   source: pqd-credit-transfer-events
   avroPath: cdtTrfTxInf_amt_instdAmt_amt
   iso20022:
     path: CdtTrfTxInf/Amt/InstdAmt
-- id: source.creditTransfer.instructedAmount.currency
+- id: source.pqd.creditTransfer.instructedAmount.currency
   alias: InstdAmt Ccy
   displayName: instructedAmount.currency
   source: pqd-credit-transfer-events
   avroPath: cdtTrfTxInf_amt_instdAmt_ccy
   iso20022:
     path: CdtTrfTxInf/Amt/InstdAmt/@Ccy
-- id: source.creditTransfer.debtor.name
+- id: source.pqd.creditTransfer.debtor.name
   alias: Debtor name
   displayName: debtor.name
   source: pqd-credit-transfer-events
   avroPath: cdtTrfTxInf_dbtr_nm
   iso20022:
     path: CdtTrfTxInf/Dbtr/Nm
-- id: source.creditTransfer.debtorAccount.iban
+- id: source.pqd.creditTransfer.debtorAccount.iban
   alias: Debtor IBAN
   displayName: debtorAccount.iban
   source: pqd-credit-transfer-events
   avroPath: cdtTrfTxInf_dbtrAcct_id_iban
   iso20022:
     path: CdtTrfTxInf/DbtrAcct/Id/IBAN
-- id: source.creditTransfer.creditor.name
+- id: source.pqd.creditTransfer.creditor.name
   alias: Creditor name
   displayName: creditor.name
   source: pqd-credit-transfer-events
   avroPath: cdtTrfTxInf_cdtr_nm
   iso20022:
     path: CdtTrfTxInf/Cdtr/Nm
-- id: source.creditTransfer.creditorAccount.iban
+- id: source.pqd.creditTransfer.creditorAccount.iban
   alias: Creditor IBAN
   displayName: creditorAccount.iban
   source: pqd-credit-transfer-events
   avroPath: cdtTrfTxInf_cdtrAcct_id_iban
   iso20022:
     path: CdtTrfTxInf/CdtrAcct/Id/IBAN
-- id: source.creditTransfer.remittance.unstructured
+- id: source.pqd.creditTransfer.remittance.unstructured
   alias: Ustrd
   displayName: remittance.unstructured
   source: pqd-credit-transfer-events

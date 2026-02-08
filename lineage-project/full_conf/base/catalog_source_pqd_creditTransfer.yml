@@ -1,12 +1,12 @@
 version: 1
-namespace: source.creditTransfer
+namespace: source.pqd.creditTransfer
 isoAbstraction:
   standard: ISO20022
   messageFamily: pacs.008
   note: iso20022.path values are best-effort inferred from Avro field prefixes; validate
     for production use.
 fields:
-- id: source.creditTransfer.id
+- id: source.pqd.creditTransfer.id
   name: id
   avroPath: id
   avroType: long
@@ -18,7 +18,7 @@ fields:
     path: null
     confidence: none
   doc: id
-- id: source.creditTransfer.paymentIdentification_instructionIdentification
+- id: source.pqd.creditTransfer.paymentIdentification_instructionIdentification
   name: paymentIdentification_instructionIdentification
   avroPath: paymentIdentification_instructionIdentification
   avroType: string
@@ -30,7 +30,7 @@ fields:
     path: null
     confidence: none
   doc: InstrId
-- id: source.creditTransfer.paymentIdentification_endToEndIdentification
+- id: source.pqd.creditTransfer.paymentIdentification_endToEndIdentification
   name: paymentIdentification_endToEndIdentification
   avroPath: paymentIdentification_endToEndIdentification
   avroType: string
@@ -42,7 +42,7 @@ fields:
     path: null
     confidence: none
   doc: EndToEndId
-- id: source.creditTransfer.paymentIdentification_transactionIdentification
+- id: source.pqd.creditTransfer.paymentIdentification_transactionIdentification
   name: paymentIdentification_transactionIdentification
   avroPath: paymentIdentification_transactionIdentification
   avroType: string
@@ -54,7 +54,7 @@ fields:
     path: null
     confidence: none
   doc: TxId
-- id: source.creditTransfer.paymentIdentification_UETR
+- id: source.pqd.creditTransfer.paymentIdentification_UETR
   name: paymentIdentification_UETR
   avroPath: paymentIdentification_UETR
   avroType: string
@@ -66,7 +66,7 @@ fields:
     path: null
     confidence: none
   doc: UETR
-- id: source.creditTransfer.paymentIdentification_clearingSystemReference
+- id: source.pqd.creditTransfer.paymentIdentification_clearingSystemReference
   name: paymentIdentification_clearingSystemReference
   avroPath: paymentIdentification_clearingSystemReference
   avroType: string
@@ -78,7 +78,7 @@ fields:
     path: null
     confidence: none
   doc: ClrSysRef
-- id: source.creditTransfer.paymentTypeInformation_instructionPriority
+- id: source.pqd.creditTransfer.paymentTypeInformation_instructionPriority
   name: paymentTypeInformation_instructionPriority
   avroPath: paymentTypeInformation_instructionPriority
   avroType: string
@@ -90,7 +90,7 @@ fields:
     path: null
     confidence: none
   doc: InstrPrty
-- id: source.creditTransfer.paymentTypeInformation_clearingChannel
+- id: source.pqd.creditTransfer.paymentTypeInformation_clearingChannel
   name: paymentTypeInformation_clearingChannel
   avroPath: paymentTypeInformation_clearingChannel
   avroType: string
@@ -102,7 +102,7 @@ fields:
     path: null
     confidence: none
   doc: ClrChanl
-- id: source.creditTransfer.paymentTypeInformation_localInstrument_code
+- id: source.pqd.creditTransfer.paymentTypeInformation_localInstrument_code
   name: paymentTypeInformation_localInstrument_code
   avroPath: paymentTypeInformation_localInstrument_code
   avroType: string
@@ -114,7 +114,7 @@ fields:
     path: null
     confidence: none
   doc: Cd
-- id: source.creditTransfer.paymentTypeInformation_localInstrument_proprietary
+- id: source.pqd.creditTransfer.paymentTypeInformation_localInstrument_proprietary
   name: paymentTypeInformation_localInstrument_proprietary
   avroPath: paymentTypeInformation_localInstrument_proprietary
   avroType: string
@@ -126,7 +126,7 @@ fields:
     path: null
     confidence: none
   doc: Prtry
-- id: source.creditTransfer.paymentTypeInformation_categoryPurpose_code
+- id: source.pqd.creditTransfer.paymentTypeInformation_categoryPurpose_code
   name: paymentTypeInformation_categoryPurpose_code
   avroPath: paymentTypeInformation_categoryPurpose_code
   avroType: string
@@ -138,7 +138,7 @@ fields:
     path: null
     confidence: none
   doc: Cd
-- id: source.creditTransfer.paymentTypeInformation_categoryPurpose_proprietary
+- id: source.pqd.creditTransfer.paymentTypeInformation_categoryPurpose_proprietary
   name: paymentTypeInformation_categoryPurpose_proprietary
   avroPath: paymentTypeInformation_categoryPurpose_proprietary
   avroType: string
@@ -150,7 +150,7 @@ fields:
     path: null
     confidence: none
   doc: Prtry
-- id: source.creditTransfer.settlementInformation_settlementMethod
+- id: source.pqd.creditTransfer.settlementInformation_settlementMethod
   name: settlementInformation_settlementMethod
   avroPath: settlementInformation_settlementMethod
   avroType: string
@@ -162,7 +162,7 @@ fields:
     path: null
     confidence: none
   doc: SttlmMtd
-- id: source.creditTransfer.settlementInformation_settlementAccount_identification_iban
+- id: source.pqd.creditTransfer.settlementInformation_settlementAccount_identification_iban
   name: settlementInformation_settlementAccount_identification_iban
   avroPath: settlementInformation_settlementAccount_identification_iban
   avroType: string
@@ -174,7 +174,7 @@ fields:
     path: null
     confidence: none
   doc: iban
-- id: source.creditTransfer.settlementInformation_settlementAccount_identification_other_identification
+- id: source.pqd.creditTransfer.settlementInformation_settlementAccount_identification_other_identification
   name: settlementInformation_settlementAccount_identification_other_identification
   avroPath: settlementInformation_settlementAccount_identification_other_identification
   avroType: string
@@ -186,7 +186,7 @@ fields:
     path: null
     confidence: none
   doc: id
-- id: source.creditTransfer.settlementInformation_settlementAccount_identification_other_schemeName_code
+- id: source.pqd.creditTransfer.settlementInformation_settlementAccount_identification_other_schemeName_code
   name: settlementInformation_settlementAccount_identification_other_schemeName_code
   avroPath: settlementInformation_settlementAccount_identification_other_schemeName_code
   avroType: string
@@ -198,7 +198,7 @@ fields:
     path: null
     confidence: none
   doc: Cd
-- id: source.creditTransfer.settlementInformation_settlementAccount_identification_other_schemeName_proprietary
+- id: source.pqd.creditTransfer.settlementInformation_settlementAccount_identification_other_schemeName_proprietary
   name: settlementInformation_settlementAccount_identification_other_schemeName_proprietary
   avroPath: settlementInformation_settlementAccount_identification_other_schemeName_proprietary
   avroType: string
@@ -210,7 +210,7 @@ fields:
     path: null
     confidence: none
   doc: Prtry
-- id: source.creditTransfer.settlementInformation_settlementAccount_proxy_identification
+- id: source.pqd.creditTransfer.settlementInformation_settlementAccount_proxy_identification
   name: settlementInformation_settlementAccount_proxy_identification
   avroPath: settlementInformation_settlementAccount_proxy_identification
   avroType: string
@@ -222,7 +222,7 @@ fields:
     path: null
     confidence: none
   doc: id
-- id: source.creditTransfer.settlementInformation_settlementAccount_proxy_code
+- id: source.pqd.creditTransfer.settlementInformation_settlementAccount_proxy_code
   name: settlementInformation_settlementAccount_proxy_code
   avroPath: settlementInformation_settlementAccount_proxy_code
   avroType: string
@@ -234,7 +234,7 @@ fields:
     path: null
     confidence: none
   doc: Cd
-- id: source.creditTransfer.settlementInformation_settlementAccount_proxy_proprietary
+- id: source.pqd.creditTransfer.settlementInformation_settlementAccount_proxy_proprietary
   name: settlementInformation_settlementAccount_proxy_proprietary
   avroPath: settlementInformation_settlementAccount_proxy_proprietary
   avroType: string
@@ -246,7 +246,7 @@ fields:
     path: null
     confidence: none
   doc: Prtry
-- id: source.creditTransfer.settlementInformation_clearingSystemIdentification_code
+- id: source.pqd.creditTransfer.settlementInformation_clearingSystemIdentification_code
   name: settlementInformation_clearingSystemIdentification_code
   avroPath: settlementInformation_clearingSystemIdentification_code
   avroType: string
@@ -258,7 +258,7 @@ fields:
     path: null
     confidence: none
   doc: cd
-- id: source.creditTransfer.settlementInformation_clearingSystemIdentification_proprietary
+- id: source.pqd.creditTransfer.settlementInformation_clearingSystemIdentification_proprietary
   name: settlementInformation_clearingSystemIdentification_proprietary
   avroPath: settlementInformation_clearingSystemIdentification_proprietary
   avroType: string
@@ -270,7 +270,7 @@ fields:
     path: null
     confidence: none
   doc: Prtry
-- id: source.creditTransfer.debtorAgent_financialInstitutionIdentification_bicfi
+- id: source.pqd.creditTransfer.debtorAgent_financialInstitutionIdentification_bicfi
   name: debtorAgent_financialInstitutionIdentification_bicfi
   avroPath: debtorAgent_financialInstitutionIdentification_bicfi
   avroType: string
@@ -282,7 +282,7 @@ fields:
     path: null
     confidence: none
   doc: bicfi
-- id: source.creditTransfer.debtorAgent_financialInstitutionIdentification_LEI
+- id: source.pqd.creditTransfer.debtorAgent_financialInstitutionIdentification_LEI
   name: debtorAgent_financialInstitutionIdentification_LEI
   avroPath: debtorAgent_financialInstitutionIdentification_LEI
   avroType: string
@@ -294,7 +294,7 @@ fields:
     path: null
     confidence: none
   doc: LEI
-- id: source.creditTransfer.debtorAgent_financialInstitutionIdentification_name
+- id: source.pqd.creditTransfer.debtorAgent_financialInstitutionIdentification_name
   name: debtorAgent_financialInstitutionIdentification_name
   avroPath: debtorAgent_financialInstitutionIdentification_name
   avroType: string
@@ -306,7 +306,7 @@ fields:
     path: null
     confidence: none
   doc: name
-- id: source.creditTransfer.debtorAgent_branchIdentification_identification
+- id: source.pqd.creditTransfer.debtorAgent_branchIdentification_identification
   name: debtorAgent_branchIdentification_identification
   avroPath: debtorAgent_branchIdentification_identification
   avroType: string
@@ -318,7 +318,7 @@ fields:
     path: null
     confidence: none
   doc: identification
-- id: source.creditTransfer.debtorAgent_branchIdentification_LEI
+- id: source.pqd.creditTransfer.debtorAgent_branchIdentification_LEI
   name: debtorAgent_branchIdentification_LEI
   avroPath: debtorAgent_branchIdentification_LEI
   avroType: string
@@ -330,7 +330,7 @@ fields:
     path: null
     confidence: none
   doc: LEI
-- id: source.creditTransfer.debtorAgent_branchIdentification_name
+- id: source.pqd.creditTransfer.debtorAgent_branchIdentification_name
   name: debtorAgent_branchIdentification_name
   avroPath: debtorAgent_branchIdentification_name
   avroType: string
@@ -342,7 +342,7 @@ fields:
     path: null
     confidence: none
   doc: name
-- id: source.creditTransfer.creditorAgent_financialInstitutionIdentification_bicfi
+- id: source.pqd.creditTransfer.creditorAgent_financialInstitutionIdentification_bicfi
   name: creditorAgent_financialInstitutionIdentification_bicfi
   avroPath: creditorAgent_financialInstitutionIdentification_bicfi
   avroType: string
@@ -354,7 +354,7 @@ fields:
     path: null
     confidence: none
   doc: bicfi
-- id: source.creditTransfer.creditorAgent_financialInstitutionIdentification_LEI
+- id: source.pqd.creditTransfer.creditorAgent_financialInstitutionIdentification_LEI
   name: creditorAgent_financialInstitutionIdentification_LEI
   avroPath: creditorAgent_financialInstitutionIdentification_LEI
   avroType: string
@@ -366,7 +366,7 @@ fields:
     path: null
     confidence: none
   doc: LEI
-- id: source.creditTransfer.creditorAgent_financialInstitutionIdentification_name
+- id: source.pqd.creditTransfer.creditorAgent_financialInstitutionIdentification_name
   name: creditorAgent_financialInstitutionIdentification_name
   avroPath: creditorAgent_financialInstitutionIdentification_name
   avroType: string
@@ -378,7 +378,7 @@ fields:
     path: null
     confidence: none
   doc: name
-- id: source.creditTransfer.creditorAgent_branchIdentification_identification
+- id: source.pqd.creditTransfer.creditorAgent_branchIdentification_identification
   name: creditorAgent_branchIdentification_identification
   avroPath: creditorAgent_branchIdentification_identification
   avroType: string
@@ -390,7 +390,7 @@ fields:
     path: null
     confidence: none
   doc: identification
-- id: source.creditTransfer.creditorAgent_branchIdentification_LEI
+- id: source.pqd.creditTransfer.creditorAgent_branchIdentification_LEI
   name: creditorAgent_branchIdentification_LEI
   avroPath: creditorAgent_branchIdentification_LEI
   avroType: string
@@ -402,7 +402,7 @@ fields:
     path: null
     confidence: none
   doc: LEI
-- id: source.creditTransfer.creditorAgent_branchIdentification_name
+- id: source.pqd.creditTransfer.creditorAgent_branchIdentification_name
   name: creditorAgent_branchIdentification_name
   avroPath: creditorAgent_branchIdentification_name
   avroType: string
@@ -414,7 +414,7 @@ fields:
     path: null
     confidence: none
   doc: name
-- id: source.creditTransfer.creditorAccount_identification_iban
+- id: source.pqd.creditTransfer.creditorAccount_identification_iban
   name: creditorAccount_identification_iban
   avroPath: creditorAccount_identification_iban
   avroType: string
@@ -426,7 +426,7 @@ fields:
     path: null
     confidence: none
   doc: iban
-- id: source.creditTransfer.creditorAccount_identification_other_identification
+- id: source.pqd.creditTransfer.creditorAccount_identification_other_identification
   name: creditorAccount_identification_other_identification
   avroPath: creditorAccount_identification_other_identification
   avroType: string
@@ -438,7 +438,7 @@ fields:
     path: null
     confidence: none
   doc: id
-- id: source.creditTransfer.creditorAccount_identification_other_schemeName_code
+- id: source.pqd.creditTransfer.creditorAccount_identification_other_schemeName_code
   name: creditorAccount_identification_other_schemeName_code
   avroPath: creditorAccount_identification_other_schemeName_code
   avroType: string
@@ -450,7 +450,7 @@ fields:
     path: null
     confidence: none
   doc: Cd
-- id: source.creditTransfer.creditorAccount_identification_other_schemeName_proprietary
+- id: source.pqd.creditTransfer.creditorAccount_identification_other_schemeName_proprietary
   name: creditorAccount_identification_other_schemeName_proprietary
   avroPath: creditorAccount_identification_other_schemeName_proprietary
   avroType: string
@@ -462,7 +462,7 @@ fields:
     path: null
     confidence: none
   doc: Prtry
-- id: source.creditTransfer.creditorAccount_proxy_identification
+- id: source.pqd.creditTransfer.creditorAccount_proxy_identification
   name: creditorAccount_proxy_identification
   avroPath: creditorAccount_proxy_identification
   avroType: string
@@ -474,7 +474,7 @@ fields:
     path: null
     confidence: none
   doc: id
-- id: source.creditTransfer.creditorAccount_proxy_code
+- id: source.pqd.creditTransfer.creditorAccount_proxy_code
   name: creditorAccount_proxy_code
   avroPath: creditorAccount_proxy_code
   avroType: string
@@ -486,7 +486,7 @@ fields:
     path: null
     confidence: none
   doc: Cd
-- id: source.creditTransfer.creditorAccount_proxy_proprietary
+- id: source.pqd.creditTransfer.creditorAccount_proxy_proprietary
   name: creditorAccount_proxy_proprietary
   avroPath: creditorAccount_proxy_proprietary
   avroType: string
@@ -498,7 +498,7 @@ fields:
     path: null
     confidence: none
   doc: Prtry
-- id: source.creditTransfer.debtorAccount_identification_iban
+- id: source.pqd.creditTransfer.debtorAccount_identification_iban
   name: debtorAccount_identification_iban
   avroPath: debtorAccount_identification_iban
   avroType: string
@@ -510,7 +510,7 @@ fields:
     path: null
     confidence: none
   doc: iban
-- id: source.creditTransfer.debtorAccount_identification_other_identification
+- id: source.pqd.creditTransfer.debtorAccount_identification_other_identification
   name: debtorAccount_identification_other_identification
   avroPath: debtorAccount_identification_other_identification
   avroType: string
@@ -522,7 +522,7 @@ fields:
     path: null
     confidence: none
   doc: id
-- id: source.creditTransfer.debtorAccount_identification_other_schemeName_code
+- id: source.pqd.creditTransfer.debtorAccount_identification_other_schemeName_code
   name: debtorAccount_identification_other_schemeName_code
   avroPath: debtorAccount_identification_other_schemeName_code
   avroType: string
@@ -534,7 +534,7 @@ fields:
     path: null
     confidence: none
   doc: Cd
-- id: source.creditTransfer.debtorAccount_identification_other_schemeName_proprietary
+- id: source.pqd.creditTransfer.debtorAccount_identification_other_schemeName_proprietary
   name: debtorAccount_identification_other_schemeName_proprietary
   avroPath: debtorAccount_identification_other_schemeName_proprietary
   avroType: string
@@ -546,7 +546,7 @@ fields:
     path: null
     confidence: none
   doc: Prtry
-- id: source.creditTransfer.debtorAccount_proxy_identification
+- id: source.pqd.creditTransfer.debtorAccount_proxy_identification
   name: debtorAccount_proxy_identification
   avroPath: debtorAccount_proxy_identification
   avroType: string
@@ -558,7 +558,7 @@ fields:
     path: null
     confidence: none
   doc: id
-- id: source.creditTransfer.debtorAccount_proxy_code
+- id: source.pqd.creditTransfer.debtorAccount_proxy_code
   name: debtorAccount_proxy_code
   avroPath: debtorAccount_proxy_code
   avroType: string
@@ -570,7 +570,7 @@ fields:
     path: null
     confidence: none
   doc: Cd
-- id: source.creditTransfer.debtorAccount_proxy_proprietary
+- id: source.pqd.creditTransfer.debtorAccount_proxy_proprietary
   name: debtorAccount_proxy_proprietary
   avroPath: debtorAccount_proxy_proprietary
   avroType: string
@@ -582,7 +582,7 @@ fields:
     path: null
     confidence: none
   doc: Prtry
-- id: source.creditTransfer.debtor_name
+- id: source.pqd.creditTransfer.debtor_name
   name: debtor_name
   avroPath: debtor_name
   avroType: string
@@ -594,7 +594,7 @@ fields:
     path: null
     confidence: none
   doc: Nm
-- id: source.creditTransfer.debtor_postalAddress_streetName
+- id: source.pqd.creditTransfer.debtor_postalAddress_streetName
   name: debtor_postalAddress_streetName
   avroPath: debtor_postalAddress_streetName
   avroType: string
@@ -606,7 +606,7 @@ fields:
     path: null
     confidence: none
   doc: StrtNm
-- id: source.creditTransfer.debtor_postalAddress_buildingNumber
+- id: source.pqd.creditTransfer.debtor_postalAddress_buildingNumber
   name: debtor_postalAddress_buildingNumber
   avroPath: debtor_postalAddress_buildingNumber
   avroType: string
@@ -618,7 +618,7 @@ fields:
     path: null
     confidence: none
   doc: BldgNb
-- id: source.creditTransfer.debtor_postalAddress_postCode
+- id: source.pqd.creditTransfer.debtor_postalAddress_postCode
   name: debtor_postalAddress_postCode
   avroPath: debtor_postalAddress_postCode
   avroType: string
@@ -630,7 +630,7 @@ fields:
     path: null
     confidence: none
   doc: PstCd
-- id: source.creditTransfer.debtor_postalAddress_townName
+- id: source.pqd.creditTransfer.debtor_postalAddress_townName
   name: debtor_postalAddress_townName
   avroPath: debtor_postalAddress_townName
   avroType: string
@@ -642,7 +642,7 @@ fields:
     path: null
     confidence: none
   doc: TwnNm
-- id: source.creditTransfer.debtor_postalAddress_countrySubDivision
+- id: source.pqd.creditTransfer.debtor_postalAddress_countrySubDivision
   name: debtor_postalAddress_countrySubDivision
   avroPath: debtor_postalAddress_countrySubDivision
   avroType: string
@@ -654,7 +654,7 @@ fields:
     path: null
     confidence: none
   doc: CtrySubDvsn
-- id: source.creditTransfer.debtor_postalAddress_country
+- id: source.pqd.creditTransfer.debtor_postalAddress_country
   name: debtor_postalAddress_country
   avroPath: debtor_postalAddress_country
   avroType: string
@@ -666,7 +666,7 @@ fields:
     path: null
     confidence: none
   doc: Ctry
-- id: source.creditTransfer.debtor_postalAddress_addressLine1
+- id: source.pqd.creditTransfer.debtor_postalAddress_addressLine1
   name: debtor_postalAddress_addressLine1
   avroPath: debtor_postalAddress_addressLine1
   avroType: string
@@ -678,7 +678,7 @@ fields:
     path: null
     confidence: none
   doc: AdrLine1
-- id: source.creditTransfer.debtor_postalAddress_addressLine2
+- id: source.pqd.creditTransfer.debtor_postalAddress_addressLine2
   name: debtor_postalAddress_addressLine2
   avroPath: debtor_postalAddress_addressLine2
   avroType: string
@@ -690,7 +690,7 @@ fields:
     path: null
     confidence: none
   doc: AdrLine2
-- id: source.creditTransfer.debtor_postalAddress_addressLine3
+- id: source.pqd.creditTransfer.debtor_postalAddress_addressLine3
   name: debtor_postalAddress_addressLine3
   avroPath: debtor_postalAddress_addressLine3
   avroType: string
@@ -702,7 +702,7 @@ fields:
     path: null
     confidence: none
   doc: AdrLine3
-- id: source.creditTransfer.debtor_postalAddress_addressLine4
+- id: source.pqd.creditTransfer.debtor_postalAddress_addressLine4
   name: debtor_postalAddress_addressLine4
   avroPath: debtor_postalAddress_addressLine4
   avroType: string
@@ -714,7 +714,7 @@ fields:
     path: null
     confidence: none
   doc: AdrLine4
-- id: source.creditTransfer.debtor_postalAddress_addressLine5
+- id: source.pqd.creditTransfer.debtor_postalAddress_addressLine5
   name: debtor_postalAddress_addressLine5
   avroPath: debtor_postalAddress_addressLine5
   avroType: string
@@ -726,7 +726,7 @@ fields:
     path: null
     confidence: none
   doc: AdrLine5
-- id: source.creditTransfer.debtor_postalAddress_addressLine6
+- id: source.pqd.creditTransfer.debtor_postalAddress_addressLine6
   name: debtor_postalAddress_addressLine6
   avroPath: debtor_postalAddress_addressLine6
   avroType: string
@@ -738,7 +738,7 @@ fields:
     path: null
     confidence: none
   doc: AdrLine6
-- id: source.creditTransfer.debtor_postalAddress_addressLine7
+- id: source.pqd.creditTransfer.debtor_postalAddress_addressLine7
   name: debtor_postalAddress_addressLine7
   avroPath: debtor_postalAddress_addressLine7
   avroType: string
@@ -750,7 +750,7 @@ fields:
     path: null
     confidence: none
   doc: AdrLine7
-- id: source.creditTransfer.debtor_organisationIdentification_anyBIC
+- id: source.pqd.creditTransfer.debtor_organisationIdentification_anyBIC
   name: debtor_organisationIdentification_anyBIC
   avroPath: debtor_organisationIdentification_anyBIC
   avroType: string
@@ -762,7 +762,7 @@ fields:
     path: null
     confidence: none
   doc: AnyBIC
-- id: source.creditTransfer.debtor_organisationIdentification_LEI
+- id: source.pqd.creditTransfer.debtor_organisationIdentification_LEI
   name: debtor_organisationIdentification_LEI
   avroPath: debtor_organisationIdentification_LEI
   avroType: string
@@ -774,7 +774,7 @@ fields:
     path: null
     confidence: none
   doc: LEI
-- id: source.creditTransfer.debtor_countryOfResidence
+- id: source.pqd.creditTransfer.debtor_countryOfResidence
   name: debtor_countryOfResidence
   avroPath: debtor_countryOfResidence
   avroType: string
@@ -786,7 +786,7 @@ fields:
     path: null
     confidence: none
   doc: CtryOfRes
-- id: source.creditTransfer.creditor_name
+- id: source.pqd.creditTransfer.creditor_name
   name: creditor_name
   avroPath: creditor_name
   avroType: string
@@ -798,7 +798,7 @@ fields:
     path: null
     confidence: none
   doc: Nm
-- id: source.creditTransfer.creditor_postalAddress_streetName
+- id: source.pqd.creditTransfer.creditor_postalAddress_streetName
   name: creditor_postalAddress_streetName
   avroPath: creditor_postalAddress_streetName
   avroType: string
@@ -810,7 +810,7 @@ fields:
     path: null
     confidence: none
   doc: StrtNm
-- id: source.creditTransfer.creditor_postalAddress_buildingNumber
+- id: source.pqd.creditTransfer.creditor_postalAddress_buildingNumber
   name: creditor_postalAddress_buildingNumber
   avroPath: creditor_postalAddress_buildingNumber
   avroType: string
@@ -822,7 +822,7 @@ fields:
     path: null
     confidence: none
   doc: BldgNb
-- id: source.creditTransfer.creditor_postalAddress_postCode
+- id: source.pqd.creditTransfer.creditor_postalAddress_postCode
   name: creditor_postalAddress_postCode
   avroPath: creditor_postalAddress_postCode
   avroType: string
@@ -834,7 +834,7 @@ fields:
     path: null
     confidence: none
   doc: PstCd
-- id: source.creditTransfer.creditor_postalAddress_townName
+- id: source.pqd.creditTransfer.creditor_postalAddress_townName
   name: creditor_postalAddress_townName
   avroPath: creditor_postalAddress_townName
   avroType: string
@@ -846,7 +846,7 @@ fields:
     path: null
     confidence: none
   doc: TwnNm
-- id: source.creditTransfer.creditor_postalAddress_countrySubDivision
+- id: source.pqd.creditTransfer.creditor_postalAddress_countrySubDivision
   name: creditor_postalAddress_countrySubDivision
   avroPath: creditor_postalAddress_countrySubDivision
   avroType: string
@@ -858,7 +858,7 @@ fields:
     path: null
     confidence: none
   doc: CtrySubDvsn
-- id: source.creditTransfer.creditor_postalAddress_country
+- id: source.pqd.creditTransfer.creditor_postalAddress_country
   name: creditor_postalAddress_country
   avroPath: creditor_postalAddress_country
   avroType: string
@@ -870,7 +870,7 @@ fields:
     path: null
     confidence: none
   doc: Ctry
-- id: source.creditTransfer.creditor_postalAddress_addressLine1
+- id: source.pqd.creditTransfer.creditor_postalAddress_addressLine1
   name: creditor_postalAddress_addressLine1
   avroPath: creditor_postalAddress_addressLine1
   avroType: string
@@ -882,7 +882,7 @@ fields:
     path: null
     confidence: none
   doc: AdrLine1
-- id: source.creditTransfer.creditor_postalAddress_addressLine2
+- id: source.pqd.creditTransfer.creditor_postalAddress_addressLine2
   name: creditor_postalAddress_addressLine2
   avroPath: creditor_postalAddress_addressLine2
   avroType: string
@@ -894,7 +894,7 @@ fields:
     path: null
     confidence: none
   doc: AdrLine2
-- id: source.creditTransfer.creditor_postalAddress_addressLine3
+- id: source.pqd.creditTransfer.creditor_postalAddress_addressLine3
   name: creditor_postalAddress_addressLine3
   avroPath: creditor_postalAddress_addressLine3
   avroType: string
@@ -906,7 +906,7 @@ fields:
     path: null
     confidence: none
   doc: AdrLine3
-- id: source.creditTransfer.creditor_postalAddress_addressLine4
+- id: source.pqd.creditTransfer.creditor_postalAddress_addressLine4
   name: creditor_postalAddress_addressLine4
   avroPath: creditor_postalAddress_addressLine4
   avroType: string
@@ -918,7 +918,7 @@ fields:
     path: null
     confidence: none
   doc: AdrLine4
-- id: source.creditTransfer.creditor_postalAddress_addressLine5
+- id: source.pqd.creditTransfer.creditor_postalAddress_addressLine5
   name: creditor_postalAddress_addressLine5
   avroPath: creditor_postalAddress_addressLine5
   avroType: string
@@ -930,7 +930,7 @@ fields:
     path: null
     confidence: none
   doc: AdrLine5
-- id: source.creditTransfer.creditor_postalAddress_addressLine6
+- id: source.pqd.creditTransfer.creditor_postalAddress_addressLine6
   name: creditor_postalAddress_addressLine6
   avroPath: creditor_postalAddress_addressLine6
   avroType: string
@@ -942,7 +942,7 @@ fields:
     path: null
     confidence: none
   doc: AdrLine6
-- id: source.creditTransfer.creditor_postalAddress_addressLine7
+- id: source.pqd.creditTransfer.creditor_postalAddress_addressLine7
   name: creditor_postalAddress_addressLine7
   avroPath: creditor_postalAddress_addressLine7
   avroType: string
@@ -954,7 +954,7 @@ fields:
     path: null
     confidence: none
   doc: AdrLine7
-- id: source.creditTransfer.creditor_organisationIdentification_anyBIC
+- id: source.pqd.creditTransfer.creditor_organisationIdentification_anyBIC
   name: creditor_organisationIdentification_anyBIC
   avroPath: creditor_organisationIdentification_anyBIC
   avroType: string
@@ -966,7 +966,7 @@ fields:
     path: null
     confidence: none
   doc: AnyBIC
-- id: source.creditTransfer.creditor_organisationIdentification_LEI
+- id: source.pqd.creditTransfer.creditor_organisationIdentification_LEI
   name: creditor_organisationIdentification_LEI
   avroPath: creditor_organisationIdentification_LEI
   avroType: string
@@ -978,7 +978,7 @@ fields:
     path: null
     confidence: none
   doc: LEI
-- id: source.creditTransfer.creditor_countryOfResidence
+- id: source.pqd.creditTransfer.creditor_countryOfResidence
   name: creditor_countryOfResidence
   avroPath: creditor_countryOfResidence
   avroType: string
@@ -990,7 +990,7 @@ fields:
     path: null
     confidence: none
   doc: CtryOfRes
-- id: source.creditTransfer.ultimateDebtor_name
+- id: source.pqd.creditTransfer.ultimateDebtor_name
   name: ultimateDebtor_name
   avroPath: ultimateDebtor_name
   avroType: string
@@ -1002,7 +1002,7 @@ fields:
     path: null
     confidence: none
   doc: Nm
-- id: source.creditTransfer.ultimateDebtor_postalAddress_streetName
+- id: source.pqd.creditTransfer.ultimateDebtor_postalAddress_streetName
   name: ultimateDebtor_postalAddress_streetName
   avroPath: ultimateDebtor_postalAddress_streetName
   avroType: string
@@ -1014,7 +1014,7 @@ fields:
     path: null
     confidence: none
   doc: StrtNm
-- id: source.creditTransfer.ultimateDebtor_postalAddress_buildingNumber
+- id: source.pqd.creditTransfer.ultimateDebtor_postalAddress_buildingNumber
   name: ultimateDebtor_postalAddress_buildingNumber
   avroPath: ultimateDebtor_postalAddress_buildingNumber
   avroType: string
@@ -1026,7 +1026,7 @@ fields:
     path: null
     confidence: none
   doc: BldgNb
-- id: source.creditTransfer.ultimateDebtor_postalAddress_postCode
+- id: source.pqd.creditTransfer.ultimateDebtor_postalAddress_postCode
   name: ultimateDebtor_postalAddress_postCode
   avroPath: ultimateDebtor_postalAddress_postCode
   avroType: string
@@ -1038,7 +1038,7 @@ fields:
     path: null
     confidence: none
   doc: PstCd
-- id: source.creditTransfer.ultimateDebtor_postalAddress_townName
+- id: source.pqd.creditTransfer.ultimateDebtor_postalAddress_townName
   name: ultimateDebtor_postalAddress_townName
   avroPath: ultimateDebtor_postalAddress_townName
   avroType: string
@@ -1050,7 +1050,7 @@ fields:
     path: null
     confidence: none
   doc: TwnNm
-- id: source.creditTransfer.ultimateDebtor_postalAddress_countrySubDivision
+- id: source.pqd.creditTransfer.ultimateDebtor_postalAddress_countrySubDivision
   name: ultimateDebtor_postalAddress_countrySubDivision
   avroPath: ultimateDebtor_postalAddress_countrySubDivision
   avroType: string
@@ -1062,7 +1062,7 @@ fields:
     path: null
     confidence: none
   doc: CtrySubDvsn
-- id: source.creditTransfer.ultimateDebtor_postalAddress_country
+- id: source.pqd.creditTransfer.ultimateDebtor_postalAddress_country
   name: ultimateDebtor_postalAddress_country
   avroPath: ultimateDebtor_postalAddress_country
   avroType: string
@@ -1074,7 +1074,7 @@ fields:
     path: null
     confidence: none
   doc: Ctry
-- id: source.creditTransfer.ultimateDebtor_postalAddress_addressLine1
+- id: source.pqd.creditTransfer.ultimateDebtor_postalAddress_addressLine1
   name: ultimateDebtor_postalAddress_addressLine1
   avroPath: ultimateDebtor_postalAddress_addressLine1
   avroType: string
@@ -1086,7 +1086,7 @@ fields:
     path: null
     confidence: none
   doc: AdrLine1
-- id: source.creditTransfer.ultimateDebtor_postalAddress_addressLine2
+- id: source.pqd.creditTransfer.ultimateDebtor_postalAddress_addressLine2
   name: ultimateDebtor_postalAddress_addressLine2
   avroPath: ultimateDebtor_postalAddress_addressLine2
   avroType: string
@@ -1098,7 +1098,7 @@ fields:
     path: null
     confidence: none
   doc: AdrLine2
-- id: source.creditTransfer.ultimateDebtor_postalAddress_addressLine3
+- id: source.pqd.creditTransfer.ultimateDebtor_postalAddress_addressLine3
   name: ultimateDebtor_postalAddress_addressLine3
   avroPath: ultimateDebtor_postalAddress_addressLine3
   avroType: string
@@ -1110,7 +1110,7 @@ fields:
     path: null
     confidence: none
   doc: AdrLine3
-- id: source.creditTransfer.ultimateDebtor_postalAddress_addressLine4
+- id: source.pqd.creditTransfer.ultimateDebtor_postalAddress_addressLine4
   name: ultimateDebtor_postalAddress_addressLine4
   avroPath: ultimateDebtor_postalAddress_addressLine4
   avroType: string
@@ -1122,7 +1122,7 @@ fields:
     path: null
     confidence: none
   doc: AdrLine4
-- id: source.creditTransfer.ultimateDebtor_postalAddress_addressLine5
+- id: source.pqd.creditTransfer.ultimateDebtor_postalAddress_addressLine5
   name: ultimateDebtor_postalAddress_addressLine5
   avroPath: ultimateDebtor_postalAddress_addressLine5
   avroType: string
@@ -1134,7 +1134,7 @@ fields:
     path: null
     confidence: none
   doc: AdrLine5
-- id: source.creditTransfer.ultimateDebtor_postalAddress_addressLine6
+- id: source.pqd.creditTransfer.ultimateDebtor_postalAddress_addressLine6
   name: ultimateDebtor_postalAddress_addressLine6
   avroPath: ultimateDebtor_postalAddress_addressLine6
   avroType: string
@@ -1146,7 +1146,7 @@ fields:
     path: null
     confidence: none
   doc: AdrLine6
-- id: source.creditTransfer.ultimateDebtor_postalAddress_addressLine7
+- id: source.pqd.creditTransfer.ultimateDebtor_postalAddress_addressLine7
   name: ultimateDebtor_postalAddress_addressLine7
   avroPath: ultimateDebtor_postalAddress_addressLine7
   avroType: string
@@ -1158,7 +1158,7 @@ fields:
     path: null
     confidence: none
   doc: AdrLine7
-- id: source.creditTransfer.ultimateDebtor_organisationIdentification_anyBIC
+- id: source.pqd.creditTransfer.ultimateDebtor_organisationIdentification_anyBIC
   name: ultimateDebtor_organisationIdentification_anyBIC
   avroPath: ultimateDebtor_organisationIdentification_anyBIC
   avroType: string
@@ -1170,7 +1170,7 @@ fields:
     path: null
     confidence: none
   doc: AnyBIC
-- id: source.creditTransfer.ultimateDebtor_organisationIdentification_LEI
+- id: source.pqd.creditTransfer.ultimateDebtor_organisationIdentification_LEI
   name: ultimateDebtor_organisationIdentification_LEI
   avroPath: ultimateDebtor_organisationIdentification_LEI
   avroType: string
@@ -1182,7 +1182,7 @@ fields:
     path: null
     confidence: none
   doc: LEI
-- id: source.creditTransfer.ultimateDebtor_countryOfResidence
+- id: source.pqd.creditTransfer.ultimateDebtor_countryOfResidence
   name: ultimateDebtor_countryOfResidence
   avroPath: ultimateDebtor_countryOfResidence
   avroType: string
@@ -1194,7 +1194,7 @@ fields:
     path: null
     confidence: none
   doc: CtryOfRes
-- id: source.creditTransfer.ultimateCreditor_name
+- id: source.pqd.creditTransfer.ultimateCreditor_name
   name: ultimateCreditor_name
   avroPath: ultimateCreditor_name
   avroType: string
@@ -1206,7 +1206,7 @@ fields:
     path: null
     confidence: none
   doc: Nm
-- id: source.creditTransfer.ultimateCreditor_postalAddress_streetName
+- id: source.pqd.creditTransfer.ultimateCreditor_postalAddress_streetName
   name: ultimateCreditor_postalAddress_streetName
   avroPath: ultimateCreditor_postalAddress_streetName
   avroType: string
@@ -1218,7 +1218,7 @@ fields:
     path: null
     confidence: none
   doc: StrtNm
-- id: source.creditTransfer.ultimateCreditor_postalAddress_buildingNumber
+- id: source.pqd.creditTransfer.ultimateCreditor_postalAddress_buildingNumber
   name: ultimateCreditor_postalAddress_buildingNumber
   avroPath: ultimateCreditor_postalAddress_buildingNumber
   avroType: string
@@ -1230,7 +1230,7 @@ fields:
     path: null
     confidence: none
   doc: BldgNb
-- id: source.creditTransfer.ultimateCreditor_postalAddress_postCode
+- id: source.pqd.creditTransfer.ultimateCreditor_postalAddress_postCode
   name: ultimateCreditor_postalAddress_postCode
   avroPath: ultimateCreditor_postalAddress_postCode
   avroType: string
@@ -1242,7 +1242,7 @@ fields:
     path: null
     confidence: none
   doc: PstCd
-- id: source.creditTransfer.ultimateCreditor_postalAddress_townName
+- id: source.pqd.creditTransfer.ultimateCreditor_postalAddress_townName
   name: ultimateCreditor_postalAddress_townName
   avroPath: ultimateCreditor_postalAddress_townName
   avroType: string
@@ -1254,7 +1254,7 @@ fields:
     path: null
     confidence: none
   doc: TwnNm
-- id: source.creditTransfer.ultimateCreditor_postalAddress_countrySubDivision
+- id: source.pqd.creditTransfer.ultimateCreditor_postalAddress_countrySubDivision
   name: ultimateCreditor_postalAddress_countrySubDivision
   avroPath: ultimateCreditor_postalAddress_countrySubDivision
   avroType: string
@@ -1266,7 +1266,7 @@ fields:
     path: null
     confidence: none
   doc: CtrySubDvsn
-- id: source.creditTransfer.ultimateCreditor_postalAddress_country
+- id: source.pqd.creditTransfer.ultimateCreditor_postalAddress_country
   name: ultimateCreditor_postalAddress_country
   avroPath: ultimateCreditor_postalAddress_country
   avroType: string
@@ -1278,7 +1278,7 @@ fields:
     path: null
     confidence: none
   doc: Ctry
-- id: source.creditTransfer.ultimateCreditor_postalAddress_addressLine1
+- id: source.pqd.creditTransfer.ultimateCreditor_postalAddress_addressLine1
   name: ultimateCreditor_postalAddress_addressLine1
   avroPath: ultimateCreditor_postalAddress_addressLine1
   avroType: string
@@ -1290,7 +1290,7 @@ fields:
     path: null
     confidence: none
   doc: AdrLine1
-- id: source.creditTransfer.ultimateCreditor_postalAddress_addressLine2
+- id: source.pqd.creditTransfer.ultimateCreditor_postalAddress_addressLine2
   name: ultimateCreditor_postalAddress_addressLine2
   avroPath: ultimateCreditor_postalAddress_addressLine2
   avroType: string
@@ -1302,7 +1302,7 @@ fields:
     path: null
     confidence: none
   doc: AdrLine2
-- id: source.creditTransfer.ultimateCreditor_postalAddress_addressLine3
+- id: source.pqd.creditTransfer.ultimateCreditor_postalAddress_addressLine3
   name: ultimateCreditor_postalAddress_addressLine3
   avroPath: ultimateCreditor_postalAddress_addressLine3
   avroType: string
@@ -1314,7 +1314,7 @@ fields:
     path: null
     confidence: none
   doc: AdrLine3
-- id: source.creditTransfer.ultimateCreditor_postalAddress_addressLine4
+- id: source.pqd.creditTransfer.ultimateCreditor_postalAddress_addressLine4
   name: ultimateCreditor_postalAddress_addressLine4
   avroPath: ultimateCreditor_postalAddress_addressLine4
   avroType: string
@@ -1326,7 +1326,7 @@ fields:
     path: null
     confidence: none
   doc: AdrLine4
-- id: source.creditTransfer.ultimateCreditor_postalAddress_addressLine5
+- id: source.pqd.creditTransfer.ultimateCreditor_postalAddress_addressLine5
   name: ultimateCreditor_postalAddress_addressLine5
   avroPath: ultimateCreditor_postalAddress_addressLine5
   avroType: string
@@ -1338,7 +1338,7 @@ fields:
     path: null
     confidence: none
   doc: AdrLine5
-- id: source.creditTransfer.ultimateCreditor_postalAddress_addressLine6
+- id: source.pqd.creditTransfer.ultimateCreditor_postalAddress_addressLine6
   name: ultimateCreditor_postalAddress_addressLine6
   avroPath: ultimateCreditor_postalAddress_addressLine6
   avroType: string
@@ -1350,7 +1350,7 @@ fields:
     path: null
     confidence: none
   doc: AdrLine6
-- id: source.creditTransfer.ultimateCreditor_postalAddress_addressLine7
+- id: source.pqd.creditTransfer.ultimateCreditor_postalAddress_addressLine7
   name: ultimateCreditor_postalAddress_addressLine7
   avroPath: ultimateCreditor_postalAddress_addressLine7
   avroType: string
@@ -1362,7 +1362,7 @@ fields:
     path: null
     confidence: none
   doc: AdrLine7
-- id: source.creditTransfer.ultimateCreditor_organisationIdentification_anyBIC
+- id: source.pqd.creditTransfer.ultimateCreditor_organisationIdentification_anyBIC
   name: ultimateCreditor_organisationIdentification_anyBIC
   avroPath: ultimateCreditor_organisationIdentification_anyBIC
   avroType: string
@@ -1374,7 +1374,7 @@ fields:
     path: null
     confidence: none
   doc: AnyBIC
-- id: source.creditTransfer.ultimateCreditor_organisationIdentification_LEI
+- id: source.pqd.creditTransfer.ultimateCreditor_organisationIdentification_LEI
   name: ultimateCreditor_organisationIdentification_LEI
   avroPath: ultimateCreditor_organisationIdentification_LEI
   avroType: string
@@ -1386,7 +1386,7 @@ fields:
     path: null
     confidence: none
   doc: LEI
-- id: source.creditTransfer.ultimateCreditor_countryOfResidence
+- id: source.pqd.creditTransfer.ultimateCreditor_countryOfResidence
   name: ultimateCreditor_countryOfResidence
   avroPath: ultimateCreditor_countryOfResidence
   avroType: string
@@ -1398,7 +1398,7 @@ fields:
     path: null
     confidence: none
   doc: CtryOfRes
-- id: source.creditTransfer.previousInstructingAgent1_financialInstitutionIdentification_bicfi
+- id: source.pqd.creditTransfer.previousInstructingAgent1_financialInstitutionIdentification_bicfi
   name: previousInstructingAgent1_financialInstitutionIdentification_bicfi
   avroPath: previousInstructingAgent1_financialInstitutionIdentification_bicfi
   avroType: string
@@ -1410,7 +1410,7 @@ fields:
     path: null
     confidence: none
   doc: bicfi
-- id: source.creditTransfer.previousInstructingAgent1_financialInstitutionIdentification_LEI
+- id: source.pqd.creditTransfer.previousInstructingAgent1_financialInstitutionIdentification_LEI
   name: previousInstructingAgent1_financialInstitutionIdentification_LEI
   avroPath: previousInstructingAgent1_financialInstitutionIdentification_LEI
   avroType: string
@@ -1422,7 +1422,7 @@ fields:
     path: null
     confidence: none
   doc: LEI
-- id: source.creditTransfer.previousInstructingAgent1_financialInstitutionIdentification_name
+- id: source.pqd.creditTransfer.previousInstructingAgent1_financialInstitutionIdentification_name
   name: previousInstructingAgent1_financialInstitutionIdentification_name
   avroPath: previousInstructingAgent1_financialInstitutionIdentification_name
   avroType: string
@@ -1434,7 +1434,7 @@ fields:
     path: null
     confidence: none
   doc: name
-- id: source.creditTransfer.previousInstructingAgent1_branchIdentification_identification
+- id: source.pqd.creditTransfer.previousInstructingAgent1_branchIdentification_identification
   name: previousInstructingAgent1_branchIdentification_identification
   avroPath: previousInstructingAgent1_branchIdentification_identification
   avroType: string
@@ -1446,7 +1446,7 @@ fields:
     path: null
     confidence: none
   doc: identification
-- id: source.creditTransfer.previousInstructingAgent1_branchIdentification_LEI
+- id: source.pqd.creditTransfer.previousInstructingAgent1_branchIdentification_LEI
   name: previousInstructingAgent1_branchIdentification_LEI
   avroPath: previousInstructingAgent1_branchIdentification_LEI
   avroType: string
@@ -1458,7 +1458,7 @@ fields:
     path: null
     confidence: none
   doc: LEI
-- id: source.creditTransfer.previousInstructingAgent1_branchIdentification_name
+- id: source.pqd.creditTransfer.previousInstructingAgent1_branchIdentification_name
   name: previousInstructingAgent1_branchIdentification_name
   avroPath: previousInstructingAgent1_branchIdentification_name
   avroType: string
@@ -1470,7 +1470,7 @@ fields:
     path: null
     confidence: none
   doc: name
-- id: source.creditTransfer.previousInstructingAgent1Account_identification_iban
+- id: source.pqd.creditTransfer.previousInstructingAgent1Account_identification_iban
   name: previousInstructingAgent1Account_identification_iban
   avroPath: previousInstructingAgent1Account_identification_iban
   avroType: string
@@ -1482,7 +1482,7 @@ fields:
     path: null
     confidence: none
   doc: iban
-- id: source.creditTransfer.previousInstructingAgent1Account_identification_other_identification
+- id: source.pqd.creditTransfer.previousInstructingAgent1Account_identification_other_identification
   name: previousInstructingAgent1Account_identification_other_identification
   avroPath: previousInstructingAgent1Account_identification_other_identification
   avroType: string
@@ -1494,7 +1494,7 @@ fields:
     path: null
     confidence: none
   doc: id
-- id: source.creditTransfer.previousInstructingAgent1Account_identification_other_schemeName_code
+- id: source.pqd.creditTransfer.previousInstructingAgent1Account_identification_other_schemeName_code
   name: previousInstructingAgent1Account_identification_other_schemeName_code
   avroPath: previousInstructingAgent1Account_identification_other_schemeName_code
   avroType: string
@@ -1506,7 +1506,7 @@ fields:
     path: null
     confidence: none
   doc: Cd
-- id: source.creditTransfer.previousInstructingAgent1Account_identification_other_schemeName_proprietary
+- id: source.pqd.creditTransfer.previousInstructingAgent1Account_identification_other_schemeName_proprietary
   name: previousInstructingAgent1Account_identification_other_schemeName_proprietary
   avroPath: previousInstructingAgent1Account_identification_other_schemeName_proprietary
   avroType: string
@@ -1518,7 +1518,7 @@ fields:
     path: null
     confidence: none
   doc: Prtry
-- id: source.creditTransfer.previousInstructingAgent1Account_proxy_identification
+- id: source.pqd.creditTransfer.previousInstructingAgent1Account_proxy_identification
   name: previousInstructingAgent1Account_proxy_identification
   avroPath: previousInstructingAgent1Account_proxy_identification
   avroType: string
@@ -1530,7 +1530,7 @@ fields:
     path: null
     confidence: none
   doc: id
-- id: source.creditTransfer.previousInstructingAgent1Account_proxy_code
+- id: source.pqd.creditTransfer.previousInstructingAgent1Account_proxy_code
   name: previousInstructingAgent1Account_proxy_code
   avroPath: previousInstructingAgent1Account_proxy_code
   avroType: string
@@ -1542,7 +1542,7 @@ fields:
     path: null
     confidence: none
   doc: Cd
-- id: source.creditTransfer.previousInstructingAgent1Account_proxy_proprietary
+- id: source.pqd.creditTransfer.previousInstructingAgent1Account_proxy_proprietary
   name: previousInstructingAgent1Account_proxy_proprietary
   avroPath: previousInstructingAgent1Account_proxy_proprietary
   avroType: string
@@ -1554,7 +1554,7 @@ fields:
     path: null
     confidence: none
   doc: Prtry
-- id: source.creditTransfer.previousInstructingAgent2_financialInstitutionIdentification_bicfi
+- id: source.pqd.creditTransfer.previousInstructingAgent2_financialInstitutionIdentification_bicfi
   name: previousInstructingAgent2_financialInstitutionIdentification_bicfi
   avroPath: previousInstructingAgent2_financialInstitutionIdentification_bicfi
   avroType: string
@@ -1566,7 +1566,7 @@ fields:
     path: null
     confidence: none
   doc: bicfi
-- id: source.creditTransfer.previousInstructingAgent2_financialInstitutionIdentification_LEI
+- id: source.pqd.creditTransfer.previousInstructingAgent2_financialInstitutionIdentification_LEI
   name: previousInstructingAgent2_financialInstitutionIdentification_LEI
   avroPath: previousInstructingAgent2_financialInstitutionIdentification_LEI
   avroType: string
@@ -1578,7 +1578,7 @@ fields:
     path: null
     confidence: none
   doc: LEI
-- id: source.creditTransfer.previousInstructingAgent2_financialInstitutionIdentification_name
+- id: source.pqd.creditTransfer.previousInstructingAgent2_financialInstitutionIdentification_name
   name: previousInstructingAgent2_financialInstitutionIdentification_name
   avroPath: previousInstructingAgent2_financialInstitutionIdentification_name
   avroType: string
@@ -1590,7 +1590,7 @@ fields:
     path: null
     confidence: none
   doc: name
-- id: source.creditTransfer.previousInstructingAgent2_branchIdentification_identification
+- id: source.pqd.creditTransfer.previousInstructingAgent2_branchIdentification_identification
   name: previousInstructingAgent2_branchIdentification_identification
   avroPath: previousInstructingAgent2_branchIdentification_identification
   avroType: string
@@ -1602,7 +1602,7 @@ fields:
     path: null
     confidence: none
   doc: identification
-- id: source.creditTransfer.previousInstructingAgent2_branchIdentification_LEI
+- id: source.pqd.creditTransfer.previousInstructingAgent2_branchIdentification_LEI
   name: previousInstructingAgent2_branchIdentification_LEI
   avroPath: previousInstructingAgent2_branchIdentification_LEI
   avroType: string
@@ -1614,7 +1614,7 @@ fields:
     path: null
     confidence: none
   doc: LEI
-- id: source.creditTransfer.previousInstructingAgent2_branchIdentification_name
+- id: source.pqd.creditTransfer.previousInstructingAgent2_branchIdentification_name
   name: previousInstructingAgent2_branchIdentification_name
   avroPath: previousInstructingAgent2_branchIdentification_name
   avroType: string
@@ -1626,7 +1626,7 @@ fields:
     path: null
     confidence: none
   doc: name
-- id: source.creditTransfer.previousInstructingAgent2Account_identification_iban
+- id: source.pqd.creditTransfer.previousInstructingAgent2Account_identification_iban
   name: previousInstructingAgent2Account_identification_iban
   avroPath: previousInstructingAgent2Account_identification_iban
   avroType: string
@@ -1638,7 +1638,7 @@ fields:
     path: null
     confidence: none
   doc: iban
-- id: source.creditTransfer.previousInstructingAgent2Account_identification_other_identification
+- id: source.pqd.creditTransfer.previousInstructingAgent2Account_identification_other_identification
   name: previousInstructingAgent2Account_identification_other_identification
   avroPath: previousInstructingAgent2Account_identification_other_identification
   avroType: string
@@ -1650,7 +1650,7 @@ fields:
     path: null
     confidence: none
   doc: id
-- id: source.creditTransfer.previousInstructingAgent2Account_identification_other_schemeName_code
+- id: source.pqd.creditTransfer.previousInstructingAgent2Account_identification_other_schemeName_code
   name: previousInstructingAgent2Account_identification_other_schemeName_code
   avroPath: previousInstructingAgent2Account_identification_other_schemeName_code
   avroType: string
@@ -1662,7 +1662,7 @@ fields:
     path: null
     confidence: none
   doc: Cd
-- id: source.creditTransfer.previousInstructingAgent2Account_identification_other_schemeName_proprietary
+- id: source.pqd.creditTransfer.previousInstructingAgent2Account_identification_other_schemeName_proprietary
   name: previousInstructingAgent2Account_identification_other_schemeName_proprietary
   avroPath: previousInstructingAgent2Account_identification_other_schemeName_proprietary
   avroType: string
@@ -1674,7 +1674,7 @@ fields:
     path: null
     confidence: none
   doc: Prtry
-- id: source.creditTransfer.previousInstructingAgent2Account_proxy_identification
+- id: source.pqd.creditTransfer.previousInstructingAgent2Account_proxy_identification
   name: previousInstructingAgent2Account_proxy_identification
   avroPath: previousInstructingAgent2Account_proxy_identification
   avroType: string
@@ -1686,7 +1686,7 @@ fields:
     path: null
     confidence: none
   doc: id
-- id: source.creditTransfer.previousInstructingAgent2Account_proxy_code
+- id: source.pqd.creditTransfer.previousInstructingAgent2Account_proxy_code
   name: previousInstructingAgent2Account_proxy_code
   avroPath: previousInstructingAgent2Account_proxy_code
   avroType: string
@@ -1698,7 +1698,7 @@ fields:
     path: null
     confidence: none
   doc: Cd
-- id: source.creditTransfer.previousInstructingAgent2Account_proxy_proprietary
+- id: source.pqd.creditTransfer.previousInstructingAgent2Account_proxy_proprietary
   name: previousInstructingAgent2Account_proxy_proprietary
   avroPath: previousInstructingAgent2Account_proxy_proprietary
   avroType: string
@@ -1710,7 +1710,7 @@ fields:
     path: null
     confidence: none
   doc: Prtry
-- id: source.creditTransfer.previousInstructingAgent3_financialInstitutionIdentification_bicfi
+- id: source.pqd.creditTransfer.previousInstructingAgent3_financialInstitutionIdentification_bicfi
   name: previousInstructingAgent3_financialInstitutionIdentification_bicfi
   avroPath: previousInstructingAgent3_financialInstitutionIdentification_bicfi
   avroType: string
@@ -1722,7 +1722,7 @@ fields:
     path: null
     confidence: none
   doc: bicfi
-- id: source.creditTransfer.previousInstructingAgent3_financialInstitutionIdentification_LEI
+- id: source.pqd.creditTransfer.previousInstructingAgent3_financialInstitutionIdentification_LEI
   name: previousInstructingAgent3_financialInstitutionIdentification_LEI
   avroPath: previousInstructingAgent3_financialInstitutionIdentification_LEI
   avroType: string
@@ -1734,7 +1734,7 @@ fields:
     path: null
     confidence: none
   doc: LEI
-- id: source.creditTransfer.previousInstructingAgent3_financialInstitutionIdentification_name
+- id: source.pqd.creditTransfer.previousInstructingAgent3_financialInstitutionIdentification_name
   name: previousInstructingAgent3_financialInstitutionIdentification_name
   avroPath: previousInstructingAgent3_financialInstitutionIdentification_name
   avroType: string
@@ -1746,7 +1746,7 @@ fields:
     path: null
     confidence: none
   doc: name
-- id: source.creditTransfer.previousInstructingAgent3_branchIdentification_identification
+- id: source.pqd.creditTransfer.previousInstructingAgent3_branchIdentification_identification
   name: previousInstructingAgent3_branchIdentification_identification
   avroPath: previousInstructingAgent3_branchIdentification_identification
   avroType: string
@@ -1758,7 +1758,7 @@ fields:
     path: null
     confidence: none
   doc: identification
-- id: source.creditTransfer.previousInstructingAgent3_branchIdentification_LEI
+- id: source.pqd.creditTransfer.previousInstructingAgent3_branchIdentification_LEI
   name: previousInstructingAgent3_branchIdentification_LEI
   avroPath: previousInstructingAgent3_branchIdentification_LEI
   avroType: string
@@ -1770,7 +1770,7 @@ fields:
     path: null
     confidence: none
   doc: LEI
-- id: source.creditTransfer.previousInstructingAgent3_branchIdentification_name
+- id: source.pqd.creditTransfer.previousInstructingAgent3_branchIdentification_name
   name: previousInstructingAgent3_branchIdentification_name
   avroPath: previousInstructingAgent3_branchIdentification_name
   avroType: string
@@ -1782,7 +1782,7 @@ fields:
     path: null
     confidence: none
   doc: name
-- id: source.creditTransfer.previousInstructingAgent3Account_identification_iban
+- id: source.pqd.creditTransfer.previousInstructingAgent3Account_identification_iban
   name: previousInstructingAgent3Account_identification_iban
   avroPath: previousInstructingAgent3Account_identification_iban
   avroType: string
@@ -1794,7 +1794,7 @@ fields:
     path: null
     confidence: none
   doc: iban
-- id: source.creditTransfer.previousInstructingAgent3Account_identification_other_identification
+- id: source.pqd.creditTransfer.previousInstructingAgent3Account_identification_other_identification
   name: previousInstructingAgent3Account_identification_other_identification
   avroPath: previousInstructingAgent3Account_identification_other_identification
   avroType: string
@@ -1806,7 +1806,7 @@ fields:
     path: null
     confidence: none
   doc: id
-- id: source.creditTransfer.previousInstructingAgent3Account_identification_other_schemeName_code
+- id: source.pqd.creditTransfer.previousInstructingAgent3Account_identification_other_schemeName_code
   name: previousInstructingAgent3Account_identification_other_schemeName_code
   avroPath: previousInstructingAgent3Account_identification_other_schemeName_code
   avroType: string
@@ -1818,7 +1818,7 @@ fields:
     path: null
     confidence: none
   doc: Cd
-- id: source.creditTransfer.previousInstructingAgent3Account_identification_other_schemeName_proprietary
+- id: source.pqd.creditTransfer.previousInstructingAgent3Account_identification_other_schemeName_proprietary
   name: previousInstructingAgent3Account_identification_other_schemeName_proprietary
   avroPath: previousInstructingAgent3Account_identification_other_schemeName_proprietary
   avroType: string
@@ -1830,7 +1830,7 @@ fields:
     path: null
     confidence: none
   doc: Prtry
-- id: source.creditTransfer.previousInstructingAgent3Account_proxy_identification
+- id: source.pqd.creditTransfer.previousInstructingAgent3Account_proxy_identification
   name: previousInstructingAgent3Account_proxy_identification
   avroPath: previousInstructingAgent3Account_proxy_identification
   avroType: string
@@ -1842,7 +1842,7 @@ fields:
     path: null
     confidence: none
   doc: id
-- id: source.creditTransfer.previousInstructingAgent3Account_proxy_code
+- id: source.pqd.creditTransfer.previousInstructingAgent3Account_proxy_code
   name: previousInstructingAgent3Account_proxy_code
   avroPath: previousInstructingAgent3Account_proxy_code
   avroType: string
@@ -1854,7 +1854,7 @@ fields:
     path: null
     confidence: none
   doc: Cd
-- id: source.creditTransfer.previousInstructingAgent3Account_proxy_proprietary
+- id: source.pqd.creditTransfer.previousInstructingAgent3Account_proxy_proprietary
   name: previousInstructingAgent3Account_proxy_proprietary
   avroPath: previousInstructingAgent3Account_proxy_proprietary
   avroType: string
@@ -1866,7 +1866,7 @@ fields:
     path: null
     confidence: none
   doc: Prtry
-- id: source.creditTransfer.instructingAgent_financialInstitutionIdentification_bicfi
+- id: source.pqd.creditTransfer.instructingAgent_financialInstitutionIdentification_bicfi
   name: instructingAgent_financialInstitutionIdentification_bicfi
   avroPath: instructingAgent_financialInstitutionIdentification_bicfi
   avroType: string
@@ -1878,7 +1878,7 @@ fields:
     path: null
     confidence: none
   doc: bicfi
-- id: source.creditTransfer.instructingAgent_financialInstitutionIdentification_LEI
+- id: source.pqd.creditTransfer.instructingAgent_financialInstitutionIdentification_LEI
   name: instructingAgent_financialInstitutionIdentification_LEI
   avroPath: instructingAgent_financialInstitutionIdentification_LEI
   avroType: string
@@ -1890,7 +1890,7 @@ fields:
     path: null
     confidence: none
   doc: LEI
-- id: source.creditTransfer.instructingAgent_financialInstitutionIdentification_name
+- id: source.pqd.creditTransfer.instructingAgent_financialInstitutionIdentification_name
   name: instructingAgent_financialInstitutionIdentification_name
   avroPath: instructingAgent_financialInstitutionIdentification_name
   avroType: string
@@ -1902,7 +1902,7 @@ fields:
     path: null
     confidence: none
   doc: name
-- id: source.creditTransfer.instructingAgent_branchIdentification_identification
+- id: source.pqd.creditTransfer.instructingAgent_branchIdentification_identification
   name: instructingAgent_branchIdentification_identification
   avroPath: instructingAgent_branchIdentification_identification
   avroType: string
@@ -1914,7 +1914,7 @@ fields:
     path: null
     confidence: none
   doc: identification
-- id: source.creditTransfer.instructingAgent_branchIdentification_LEI
+- id: source.pqd.creditTransfer.instructingAgent_branchIdentification_LEI
   name: instructingAgent_branchIdentification_LEI
   avroPath: instructingAgent_branchIdentification_LEI
   avroType: string
@@ -1926,7 +1926,7 @@ fields:
     path: null
     confidence: none
   doc: LEI
-- id: source.creditTransfer.instructingAgent_branchIdentification_name
+- id: source.pqd.creditTransfer.instructingAgent_branchIdentification_name
   name: instructingAgent_branchIdentification_name
   avroPath: instructingAgent_branchIdentification_name
   avroType: string
@@ -1938,7 +1938,7 @@ fields:
     path: null
     confidence: none
   doc: name
-- id: source.creditTransfer.instructedAgent_financialInstitutionIdentification_bicfi
+- id: source.pqd.creditTransfer.instructedAgent_financialInstitutionIdentification_bicfi
   name: instructedAgent_financialInstitutionIdentification_bicfi
   avroPath: instructedAgent_financialInstitutionIdentification_bicfi
   avroType: string
@@ -1950,7 +1950,7 @@ fields:
     path: null
     confidence: none
   doc: bicfi
-- id: source.creditTransfer.instructedAgent_financialInstitutionIdentification_LEI
+- id: source.pqd.creditTransfer.instructedAgent_financialInstitutionIdentification_LEI
   name: instructedAgent_financialInstitutionIdentification_LEI
   avroPath: instructedAgent_financialInstitutionIdentification_LEI
   avroType: string
@@ -1962,7 +1962,7 @@ fields:
     path: null
     confidence: none
   doc: LEI
-- id: source.creditTransfer.instructedAgent_financialInstitutionIdentification_name
+- id: source.pqd.creditTransfer.instructedAgent_financialInstitutionIdentification_name
   name: instructedAgent_financialInstitutionIdentification_name
   avroPath: instructedAgent_financialInstitutionIdentification_name
   avroType: string
@@ -1974,7 +1974,7 @@ fields:
     path: null
     confidence: none
   doc: name
-- id: source.creditTransfer.instructedAgent_branchIdentification_identification
+- id: source.pqd.creditTransfer.instructedAgent_branchIdentification_identification
   name: instructedAgent_branchIdentification_identification
   avroPath: instructedAgent_branchIdentification_identification
   avroType: string
@@ -1986,7 +1986,7 @@ fields:
     path: null
     confidence: none
   doc: identification
-- id: source.creditTransfer.instructedAgent_branchIdentification_LEI
+- id: source.pqd.creditTransfer.instructedAgent_branchIdentification_LEI
   name: instructedAgent_branchIdentification_LEI
   avroPath: instructedAgent_branchIdentification_LEI
   avroType: string
@@ -1998,7 +1998,7 @@ fields:
     path: null
     confidence: none
   doc: LEI
-- id: source.creditTransfer.instructedAgent_branchIdentification_name
+- id: source.pqd.creditTransfer.instructedAgent_branchIdentification_name
   name: instructedAgent_branchIdentification_name
   avroPath: instructedAgent_branchIdentification_name
   avroType: string
@@ -2010,7 +2010,7 @@ fields:
     path: null
     confidence: none
   doc: name
-- id: source.creditTransfer.intermediaryAgent1_financialInstitutionIdentification_bicfi
+- id: source.pqd.creditTransfer.intermediaryAgent1_financialInstitutionIdentification_bicfi
   name: intermediaryAgent1_financialInstitutionIdentification_bicfi
   avroPath: intermediaryAgent1_financialInstitutionIdentification_bicfi
   avroType: string
@@ -2022,7 +2022,7 @@ fields:
     path: null
     confidence: none
   doc: bicfi
-- id: source.creditTransfer.intermediaryAgent1_financialInstitutionIdentification_LEI
+- id: source.pqd.creditTransfer.intermediaryAgent1_financialInstitutionIdentification_LEI
   name: intermediaryAgent1_financialInstitutionIdentification_LEI
   avroPath: intermediaryAgent1_financialInstitutionIdentification_LEI
   avroType: string
@@ -2034,7 +2034,7 @@ fields:
     path: null
     confidence: none
   doc: LEI
-- id: source.creditTransfer.intermediaryAgent1_financialInstitutionIdentification_name
+- id: source.pqd.creditTransfer.intermediaryAgent1_financialInstitutionIdentification_name
   name: intermediaryAgent1_financialInstitutionIdentification_name
   avroPath: intermediaryAgent1_financialInstitutionIdentification_name
   avroType: string
@@ -2046,7 +2046,7 @@ fields:
     path: null
     confidence: none
   doc: name
-- id: source.creditTransfer.intermediaryAgent1_branchIdentification_identification
+- id: source.pqd.creditTransfer.intermediaryAgent1_branchIdentification_identification
   name: intermediaryAgent1_branchIdentification_identification
   avroPath: intermediaryAgent1_branchIdentification_identification
   avroType: string
@@ -2058,7 +2058,7 @@ fields:
     path: null
     confidence: none
   doc: identification
-- id: source.creditTransfer.intermediaryAgent1_branchIdentification_LEI
+- id: source.pqd.creditTransfer.intermediaryAgent1_branchIdentification_LEI
   name: intermediaryAgent1_branchIdentification_LEI
   avroPath: intermediaryAgent1_branchIdentification_LEI
   avroType: string
@@ -2070,7 +2070,7 @@ fields:
     path: null
     confidence: none
   doc: LEI
-- id: source.creditTransfer.intermediaryAgent1_branchIdentification_name
+- id: source.pqd.creditTransfer.intermediaryAgent1_branchIdentification_name
   name: intermediaryAgent1_branchIdentification_name
   avroPath: intermediaryAgent1_branchIdentification_name
   avroType: string
@@ -2082,7 +2082,7 @@ fields:
     path: null
     confidence: none
   doc: name
-- id: source.creditTransfer.intermediaryAgent1Account_identification_iban
+- id: source.pqd.creditTransfer.intermediaryAgent1Account_identification_iban
   name: intermediaryAgent1Account_identification_iban
   avroPath: intermediaryAgent1Account_identification_iban
   avroType: string
@@ -2094,7 +2094,7 @@ fields:
     path: null
     confidence: none
   doc: iban
-- id: source.creditTransfer.intermediaryAgent1Account_identification_other_identification
+- id: source.pqd.creditTransfer.intermediaryAgent1Account_identification_other_identification
   name: intermediaryAgent1Account_identification_other_identification
   avroPath: intermediaryAgent1Account_identification_other_identification
   avroType: string
@@ -2106,7 +2106,7 @@ fields:
     path: null
     confidence: none
   doc: id
-- id: source.creditTransfer.intermediaryAgent1Account_identification_other_schemeName_code
+- id: source.pqd.creditTransfer.intermediaryAgent1Account_identification_other_schemeName_code
   name: intermediaryAgent1Account_identification_other_schemeName_code
   avroPath: intermediaryAgent1Account_identification_other_schemeName_code
   avroType: string
@@ -2118,7 +2118,7 @@ fields:
     path: null
     confidence: none
   doc: Cd
-- id: source.creditTransfer.intermediaryAgent1Account_identification_other_schemeName_proprietary
+- id: source.pqd.creditTransfer.intermediaryAgent1Account_identification_other_schemeName_proprietary
   name: intermediaryAgent1Account_identification_other_schemeName_proprietary
   avroPath: intermediaryAgent1Account_identification_other_schemeName_proprietary
   avroType: string
@@ -2130,7 +2130,7 @@ fields:
     path: null
     confidence: none
   doc: Prtry
-- id: source.creditTransfer.intermediaryAgent1Account_proxy_identification
+- id: source.pqd.creditTransfer.intermediaryAgent1Account_proxy_identification
   name: intermediaryAgent1Account_proxy_identification
   avroPath: intermediaryAgent1Account_proxy_identification
   avroType: string
@@ -2142,7 +2142,7 @@ fields:
     path: null
     confidence: none
   doc: id
-- id: source.creditTransfer.intermediaryAgent1Account_proxy_code
+- id: source.pqd.creditTransfer.intermediaryAgent1Account_proxy_code
   name: intermediaryAgent1Account_proxy_code
   avroPath: intermediaryAgent1Account_proxy_code
   avroType: string
@@ -2154,7 +2154,7 @@ fields:
     path: null
     confidence: none
   doc: Cd
-- id: source.creditTransfer.intermediaryAgent1Account_proxy_proprietary
+- id: source.pqd.creditTransfer.intermediaryAgent1Account_proxy_proprietary
   name: intermediaryAgent1Account_proxy_proprietary
   avroPath: intermediaryAgent1Account_proxy_proprietary
   avroType: string
@@ -2166,7 +2166,7 @@ fields:
     path: null
     confidence: none
   doc: Prtry
-- id: source.creditTransfer.intermediaryAgent2_financialInstitutionIdentification_bicfi
+- id: source.pqd.creditTransfer.intermediaryAgent2_financialInstitutionIdentification_bicfi
   name: intermediaryAgent2_financialInstitutionIdentification_bicfi
   avroPath: intermediaryAgent2_financialInstitutionIdentification_bicfi
   avroType: string
@@ -2178,7 +2178,7 @@ fields:
     path: null
     confidence: none
   doc: bicfi
-- id: source.creditTransfer.intermediaryAgent2_financialInstitutionIdentification_LEI
+- id: source.pqd.creditTransfer.intermediaryAgent2_financialInstitutionIdentification_LEI
   name: intermediaryAgent2_financialInstitutionIdentification_LEI
   avroPath: intermediaryAgent2_financialInstitutionIdentification_LEI
   avroType: string
@@ -2190,7 +2190,7 @@ fields:
     path: null
     confidence: none
   doc: LEI
-- id: source.creditTransfer.intermediaryAgent2_financialInstitutionIdentification_name
+- id: source.pqd.creditTransfer.intermediaryAgent2_financialInstitutionIdentification_name
   name: intermediaryAgent2_financialInstitutionIdentification_name
   avroPath: intermediaryAgent2_financialInstitutionIdentification_name
   avroType: string
@@ -2202,7 +2202,7 @@ fields:
     path: null
     confidence: none
   doc: name
-- id: source.creditTransfer.intermediaryAgent2_branchIdentification_identification
+- id: source.pqd.creditTransfer.intermediaryAgent2_branchIdentification_identification
   name: intermediaryAgent2_branchIdentification_identification
   avroPath: intermediaryAgent2_branchIdentification_identification
   avroType: string
@@ -2214,7 +2214,7 @@ fields:
     path: null
     confidence: none
   doc: identification
-- id: source.creditTransfer.intermediaryAgent2_branchIdentification_LEI
+- id: source.pqd.creditTransfer.intermediaryAgent2_branchIdentification_LEI
   name: intermediaryAgent2_branchIdentification_LEI
   avroPath: intermediaryAgent2_branchIdentification_LEI
   avroType: string
@@ -2226,7 +2226,7 @@ fields:
     path: null
     confidence: none
   doc: LEI
-- id: source.creditTransfer.intermediaryAgent2_branchIdentification_name
+- id: source.pqd.creditTransfer.intermediaryAgent2_branchIdentification_name
   name: intermediaryAgent2_branchIdentification_name
   avroPath: intermediaryAgent2_branchIdentification_name
   avroType: string
@@ -2238,7 +2238,7 @@ fields:
     path: null
     confidence: none
   doc: name
-- id: source.creditTransfer.intermediaryAgent2Account_identification_iban
+- id: source.pqd.creditTransfer.intermediaryAgent2Account_identification_iban
   name: intermediaryAgent2Account_identification_iban
   avroPath: intermediaryAgent2Account_identification_iban
   avroType: string
@@ -2250,7 +2250,7 @@ fields:
     path: null
     confidence: none
   doc: iban
-- id: source.creditTransfer.intermediaryAgent2Account_identification_other_identification
+- id: source.pqd.creditTransfer.intermediaryAgent2Account_identification_other_identification
   name: intermediaryAgent2Account_identification_other_identification
   avroPath: intermediaryAgent2Account_identification_other_identification
   avroType: string
@@ -2262,7 +2262,7 @@ fields:
     path: null
     confidence: none
   doc: id
-- id: source.creditTransfer.intermediaryAgent2Account_identification_other_schemeName_code
+- id: source.pqd.creditTransfer.intermediaryAgent2Account_identification_other_schemeName_code
   name: intermediaryAgent2Account_identification_other_schemeName_code
   avroPath: intermediaryAgent2Account_identification_other_schemeName_code
   avroType: string
@@ -2274,7 +2274,7 @@ fields:
     path: null
     confidence: none
   doc: Cd
-- id: source.creditTransfer.intermediaryAgent2Account_identification_other_schemeName_proprietary
+- id: source.pqd.creditTransfer.intermediaryAgent2Account_identification_other_schemeName_proprietary
   name: intermediaryAgent2Account_identification_other_schemeName_proprietary
   avroPath: intermediaryAgent2Account_identification_other_schemeName_proprietary
   avroType: string
@@ -2286,7 +2286,7 @@ fields:
     path: null
     confidence: none
   doc: Prtry
-- id: source.creditTransfer.intermediaryAgent2Account_proxy_identification
+- id: source.pqd.creditTransfer.intermediaryAgent2Account_proxy_identification
   name: intermediaryAgent2Account_proxy_identification
   avroPath: intermediaryAgent2Account_proxy_identification
   avroType: string
@@ -2298,7 +2298,7 @@ fields:
     path: null
     confidence: none
   doc: id
-- id: source.creditTransfer.intermediaryAgent2Account_proxy_code
+- id: source.pqd.creditTransfer.intermediaryAgent2Account_proxy_code
   name: intermediaryAgent2Account_proxy_code
   avroPath: intermediaryAgent2Account_proxy_code
   avroType: string
@@ -2310,7 +2310,7 @@ fields:
     path: null
     confidence: none
   doc: Cd
-- id: source.creditTransfer.intermediaryAgent2Account_proxy_proprietary
+- id: source.pqd.creditTransfer.intermediaryAgent2Account_proxy_proprietary
   name: intermediaryAgent2Account_proxy_proprietary
   avroPath: intermediaryAgent2Account_proxy_proprietary
   avroType: string
@@ -2322,7 +2322,7 @@ fields:
     path: null
     confidence: none
   doc: Prtry
-- id: source.creditTransfer.intermediaryAgent3_financialInstitutionIdentification_bicfi
+- id: source.pqd.creditTransfer.intermediaryAgent3_financialInstitutionIdentification_bicfi
   name: intermediaryAgent3_financialInstitutionIdentification_bicfi
   avroPath: intermediaryAgent3_financialInstitutionIdentification_bicfi
   avroType: string
@@ -2334,7 +2334,7 @@ fields:
     path: null
     confidence: none
   doc: bicfi
-- id: source.creditTransfer.intermediaryAgent3_financialInstitutionIdentification_LEI
+- id: source.pqd.creditTransfer.intermediaryAgent3_financialInstitutionIdentification_LEI
   name: intermediaryAgent3_financialInstitutionIdentification_LEI
   avroPath: intermediaryAgent3_financialInstitutionIdentification_LEI
   avroType: string
@@ -2346,7 +2346,7 @@ fields:
     path: null
     confidence: none
   doc: LEI
-- id: source.creditTransfer.intermediaryAgent3_financialInstitutionIdentification_name
+- id: source.pqd.creditTransfer.intermediaryAgent3_financialInstitutionIdentification_name
   name: intermediaryAgent3_financialInstitutionIdentification_name
   avroPath: intermediaryAgent3_financialInstitutionIdentification_name
   avroType: string
@@ -2358,7 +2358,7 @@ fields:
     path: null
     confidence: none
   doc: name
-- id: source.creditTransfer.intermediaryAgent3_branchIdentification_identification
+- id: source.pqd.creditTransfer.intermediaryAgent3_branchIdentification_identification
   name: intermediaryAgent3_branchIdentification_identification
   avroPath: intermediaryAgent3_branchIdentification_identification
   avroType: string
@@ -2370,7 +2370,7 @@ fields:
     path: null
     confidence: none
   doc: identification
-- id: source.creditTransfer.intermediaryAgent3_branchIdentification_LEI
+- id: source.pqd.creditTransfer.intermediaryAgent3_branchIdentification_LEI
   name: intermediaryAgent3_branchIdentification_LEI
   avroPath: intermediaryAgent3_branchIdentification_LEI
   avroType: string
@@ -2382,7 +2382,7 @@ fields:
     path: null
     confidence: none
   doc: LEI
-- id: source.creditTransfer.intermediaryAgent3_branchIdentification_name
+- id: source.pqd.creditTransfer.intermediaryAgent3_branchIdentification_name
   name: intermediaryAgent3_branchIdentification_name
   avroPath: intermediaryAgent3_branchIdentification_name
   avroType: string
@@ -2394,7 +2394,7 @@ fields:
     path: null
     confidence: none
   doc: name
-- id: source.creditTransfer.intermediaryAgent3Account_identification_iban
+- id: source.pqd.creditTransfer.intermediaryAgent3Account_identification_iban
   name: intermediaryAgent3Account_identification_iban
   avroPath: intermediaryAgent3Account_identification_iban
   avroType: string
@@ -2406,7 +2406,7 @@ fields:
     path: null
     confidence: none
   doc: iban
-- id: source.creditTransfer.intermediaryAgent3Account_identification_other_identification
+- id: source.pqd.creditTransfer.intermediaryAgent3Account_identification_other_identification
   name: intermediaryAgent3Account_identification_other_identification
   avroPath: intermediaryAgent3Account_identification_other_identification
   avroType: string
@@ -2418,7 +2418,7 @@ fields:
     path: null
     confidence: none
   doc: id
-- id: source.creditTransfer.intermediaryAgent3Account_identification_other_schemeName_code
+- id: source.pqd.creditTransfer.intermediaryAgent3Account_identification_other_schemeName_code
   name: intermediaryAgent3Account_identification_other_schemeName_code
   avroPath: intermediaryAgent3Account_identification_other_schemeName_code
   avroType: string
@@ -2430,7 +2430,7 @@ fields:
     path: null
     confidence: none
   doc: Cd
-- id: source.creditTransfer.intermediaryAgent3Account_identification_other_schemeName_proprietary
+- id: source.pqd.creditTransfer.intermediaryAgent3Account_identification_other_schemeName_proprietary
   name: intermediaryAgent3Account_identification_other_schemeName_proprietary
   avroPath: intermediaryAgent3Account_identification_other_schemeName_proprietary
   avroType: string
@@ -2442,7 +2442,7 @@ fields:
     path: null
     confidence: none
   doc: Prtry
-- id: source.creditTransfer.intermediaryAgent3Account_proxy_identification
+- id: source.pqd.creditTransfer.intermediaryAgent3Account_proxy_identification
   name: intermediaryAgent3Account_proxy_identification
   avroPath: intermediaryAgent3Account_proxy_identification
   avroType: string
@@ -2454,7 +2454,7 @@ fields:
     path: null
     confidence: none
   doc: id
-- id: source.creditTransfer.intermediaryAgent3Account_proxy_code
+- id: source.pqd.creditTransfer.intermediaryAgent3Account_proxy_code
   name: intermediaryAgent3Account_proxy_code
   avroPath: intermediaryAgent3Account_proxy_code
   avroType: string
@@ -2466,7 +2466,7 @@ fields:
     path: null
     confidence: none
   doc: Cd
-- id: source.creditTransfer.intermediaryAgent3Account_proxy_proprietary
+- id: source.pqd.creditTransfer.intermediaryAgent3Account_proxy_proprietary
   name: intermediaryAgent3Account_proxy_proprietary
   avroPath: intermediaryAgent3Account_proxy_proprietary
   avroType: string
@@ -2478,7 +2478,7 @@ fields:
     path: null
     confidence: none
   doc: Prtry
-- id: source.creditTransfer.instructedAmountCurrency
+- id: source.pqd.creditTransfer.instructedAmountCurrency
   name: instructedAmountCurrency
   avroPath: instructedAmountCurrency
   avroType: string
@@ -2490,7 +2490,7 @@ fields:
     path: null
     confidence: none
   doc: InstdAmtCcy
-- id: source.creditTransfer.instructedAmount
+- id: source.pqd.creditTransfer.instructedAmount
   name: instructedAmount
   avroPath: instructedAmount
   avroType: double
@@ -2502,7 +2502,7 @@ fields:
     path: null
     confidence: none
   doc: InstdAmt
-- id: source.creditTransfer.interbankSettlementAmount_currency
+- id: source.pqd.creditTransfer.interbankSettlementAmount_currency
   name: interbankSettlementAmount_currency
   avroPath: interbankSettlementAmount_currency
   avroType: string
@@ -2514,7 +2514,7 @@ fields:
     path: null
     confidence: none
   doc: IntrBkSttlmAmtCcy
-- id: source.creditTransfer.interbankSettlementAmount_amount
+- id: source.pqd.creditTransfer.interbankSettlementAmount_amount
   name: interbankSettlementAmount_amount
   avroPath: interbankSettlementAmount_amount
   avroType: double
@@ -2526,7 +2526,7 @@ fields:
     path: null
     confidence: none
   doc: IntrBkSttlmAmt
-- id: source.creditTransfer.interbankSettlementDate
+- id: source.pqd.creditTransfer.interbankSettlementDate
   name: interbankSettlementDate
   avroPath: interbankSettlementDate
   avroType: string
@@ -2538,7 +2538,7 @@ fields:
     path: CdtTrfTxInf/IntrBkSttlmDt
     confidence: inferred
   doc: IntrBkSttlmDt
-- id: source.creditTransfer.requestedExecutionDate
+- id: source.pqd.creditTransfer.requestedExecutionDate
   name: requestedExecutionDate
   avroPath: requestedExecutionDate
   avroType: string
@@ -2550,7 +2550,7 @@ fields:
     path: CdtTrfTxInf/ReqdExctnDt
     confidence: inferred
   doc: ReqdExctnDt
-- id: source.creditTransfer.exchangeRate
+- id: source.pqd.creditTransfer.exchangeRate
   name: exchangeRate
   avroPath: exchangeRate
   avroType: double
@@ -2562,7 +2562,7 @@ fields:
     path: null
     confidence: none
   doc: XchgRate
-- id: source.creditTransfer.exchangeRateType
+- id: source.pqd.creditTransfer.exchangeRateType
   name: exchangeRateType
   avroPath: exchangeRateType
   avroType: string
@@ -2574,7 +2574,7 @@ fields:
     path: null
     confidence: none
   doc: XchgRateTp
-- id: source.creditTransfer.exchangeRateDate
+- id: source.pqd.creditTransfer.exchangeRateDate
   name: exchangeRateDate
   avroPath: exchangeRateDate
   avroType: string
@@ -2586,7 +2586,7 @@ fields:
     path: null
     confidence: none
   doc: XchgRateDt
-- id: source.creditTransfer.chargeBearer
+- id: source.pqd.creditTransfer.chargeBearer
   name: chargeBearer
   avroPath: chargeBearer
   avroType: string
@@ -2598,7 +2598,7 @@ fields:
     path: CdtTrfTxInf/ChrgBr
     confidence: inferred
   doc: ChrgBr
-- id: source.creditTransfer.internalInformation_DNBMarketsProduct
+- id: source.pqd.creditTransfer.internalInformation_DNBMarketsProduct
   name: internalInformation_DNBMarketsProduct
   avroPath: internalInformation_DNBMarketsProduct
   avroType: string
@@ -2610,7 +2610,7 @@ fields:
     path: null
     confidence: none
   doc: DNBMrkPrd
-- id: source.creditTransfer.internalInformation_sourceApplication
+- id: source.pqd.creditTransfer.internalInformation_sourceApplication
   name: internalInformation_sourceApplication
   avroPath: internalInformation_sourceApplication
   avroType: string
@@ -2622,7 +2622,7 @@ fields:
     path: null
     confidence: none
   doc: SrcApp
-- id: source.creditTransfer.internalInformation_clientApplication
+- id: source.pqd.creditTransfer.internalInformation_clientApplication
   name: internalInformation_clientApplication
   avroPath: internalInformation_clientApplication
   avroType: string
@@ -2634,7 +2634,7 @@ fields:
     path: null
     confidence: none
   doc: ClntApp
-- id: source.creditTransfer.internalInformation_departmentId
+- id: source.pqd.creditTransfer.internalInformation_departmentId
   name: internalInformation_departmentId
   avroPath: internalInformation_departmentId
   avroType: string
@@ -2646,7 +2646,7 @@ fields:
     path: null
     confidence: none
   doc: DepId
-- id: source.creditTransfer.internalInformation_direction
+- id: source.pqd.creditTransfer.internalInformation_direction
   name: internalInformation_direction
   avroPath: internalInformation_direction
   avroType: string
@@ -2658,7 +2658,7 @@ fields:
     path: null
     confidence: none
   doc: Der
-- id: source.creditTransfer.internalInformation_paymentType
+- id: source.pqd.creditTransfer.internalInformation_paymentType
   name: internalInformation_paymentType
   avroPath: internalInformation_paymentType
   avroType: string
@@ -2670,7 +2670,7 @@ fields:
     path: null
     confidence: none
   doc: PayTp
-- id: source.creditTransfer.internalInformation_transactionPriceCurrency
+- id: source.pqd.creditTransfer.internalInformation_transactionPriceCurrency
   name: internalInformation_transactionPriceCurrency
   avroPath: internalInformation_transactionPriceCurrency
   avroType: string
@@ -2682,7 +2682,7 @@ fields:
     path: null
     confidence: none
   doc: TrPrcCcy
-- id: source.creditTransfer.internalInformation_transactionPrice
+- id: source.pqd.creditTransfer.internalInformation_transactionPrice
   name: internalInformation_transactionPrice
   avroPath: internalInformation_transactionPrice
   avroType: double
@@ -2694,7 +2694,7 @@ fields:
     path: null
     confidence: none
   doc: TrPrc
-- id: source.creditTransfer.internalInformation_priceAgreementLevelType
+- id: source.pqd.creditTransfer.internalInformation_priceAgreementLevelType
   name: internalInformation_priceAgreementLevelType
   avroPath: internalInformation_priceAgreementLevelType
   avroType: string
@@ -2706,7 +2706,7 @@ fields:
     path: null
     confidence: none
   doc: PrcAgrTp
-- id: source.creditTransfer.internalInformation_debtorCustomerSegment
+- id: source.pqd.creditTransfer.internalInformation_debtorCustomerSegment
   name: internalInformation_debtorCustomerSegment
   avroPath: internalInformation_debtorCustomerSegment
   avroType: string
@@ -2718,7 +2718,7 @@ fields:
     path: null
     confidence: none
   doc: DbtCSg
-- id: source.creditTransfer.internalInformation_creditorCustomerSegment
+- id: source.pqd.creditTransfer.internalInformation_creditorCustomerSegment
   name: internalInformation_creditorCustomerSegment
   avroPath: internalInformation_creditorCustomerSegment
   avroType: string

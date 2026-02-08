@@ -2,7 +2,7 @@ version: 1
 
 mappings:
   - id: map.pqd.amount_instdAmt__to__canonical.OriginalAmount
-    from: source.creditTransfer.instructedAmount
+    from: source.pqd.creditTransfer.instructedAmount
     to: canonical.transaction.OriginalAmount
 
     transform:
@@ -14,7 +14,7 @@ mappings:
 
     edges:
       - type: DERIVES_FROM
-        from: source.creditTransfer.instructedAmount
+        from: source.pqd.creditTransfer.instructedAmount
         to: xform.norm.amount.instdAmt_to_OriginalAmount
       - type: DERIVES_FROM
         from: xform.norm.amount.instdAmt_to_OriginalAmount

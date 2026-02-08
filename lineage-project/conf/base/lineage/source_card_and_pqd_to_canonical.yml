@@ -45,7 +45,7 @@ mappings:
     concept: card
     eventType: authorisation
 - id: map.pqd.instdAmt_to_canonical.original_amount
-  from: source.creditTransfer.instructedAmount.value
+  from: source.pqd.creditTransfer.instructedAmount.value
   to: canonical.transaction.OriginalAmount
   transform:
     id: xform.pqd.Normalize.instdAmt_to_OriginalAmount
@@ -59,7 +59,7 @@ mappings:
     rail: pacs.008
     confidence: final
 - id: map.pqd.ccy_to_canonical.original_currency
-  from: source.creditTransfer.instructedAmount.currency
+  from: source.pqd.creditTransfer.instructedAmount.currency
   to: canonical.transaction.OriginalCurrency
   metadata:
     concept: international
@@ -67,7 +67,7 @@ mappings:
     rail: pacs.008
     confidence: final
 - id: map.pqd.parties_to_canonical.debtor_creditor
-  from: source.creditTransfer.debtor.name
+  from: source.pqd.creditTransfer.debtor.name
   to: canonical.transaction.DebtorName
   transform:
     id: xform.pqd.Passthrough.debtor.name_to_DebtorName
@@ -78,7 +78,7 @@ mappings:
     eventType: booking
     rail: pacs.008
 - id: map.pqd.creditor_to_canonical.creditor
-  from: source.creditTransfer.creditor.name
+  from: source.pqd.creditTransfer.creditor.name
   to: canonical.transaction.CreditorName
   transform:
     id: xform.pqd.Passthrough.creditor.name_to_CreditorName
@@ -89,7 +89,7 @@ mappings:
     eventType: booking
     rail: pacs.008
 - id: map.pqd.remittance_override
-  from: source.creditTransfer.remittance.unstructured
+  from: source.pqd.creditTransfer.remittance.unstructured
   to: canonical.transaction.RemittanceText
   transform:
     id: xform.pqd.Override.rmtInf_ustrd_to_RemittanceText
@@ -99,7 +99,7 @@ mappings:
     domain: remittance
   edges:
   - type: DERIVES_FROM
-    from: source.creditTransfer.remittance.unstructured
+    from: source.pqd.creditTransfer.remittance.unstructured
     to: xform.pqd.Override.rmtInf_ustrd_to_RemittanceText
   - type: OVERRIDES
     from: xform.pqd.Override.rmtInf_ustrd_to_RemittanceText
